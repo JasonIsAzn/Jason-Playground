@@ -3,7 +3,9 @@ import Particles from 'react-tsparticles';
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from 'tsparticles'
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
-import smallDeer from "../../assets/sunrise2.svg"
+import sunRise from "../../assets/sunrise2.svg"
+
+import { Typewriter } from 'react-simple-typewriter'
 
 
 const Header = (enabled: any) => {
@@ -79,16 +81,11 @@ const Header = (enabled: any) => {
         },
         particles: {
             color: {
-                value: "#ece75f",
-                // animation: {
-                //     enable: true,
-                //     speed: 20,
-                //     sync: true
-                // }
+                value: "#ECE75F",
             },
             links: {
                 blink: false,
-                color: "#ffffff",
+                color: "#FFFFFF",
                 consent: false,
                 distance: 30,
                 enable: true,
@@ -137,10 +134,10 @@ const Header = (enabled: any) => {
             },
             scale: 1,
             type: "inline",
-            url: smallDeer,
+            url: sunRise,
         },
         background: {
-            color: "#000000",
+            color: "#121212",
             image: "",
             position: "50% 50%",
             repeat: "no-repeat",
@@ -159,15 +156,25 @@ const Header = (enabled: any) => {
             <Particles className="h-screen" id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options}
             />
             <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <p className='flex flex-col justify-center items-center text-[#FFFFFF] text-3xl md:text-5xl xl:text-6xl'>
-                    Hello, I'm Jason Le
-                </p>
-                <p className='flex flex-col justify-center items-center text-[#FFFFFF] text-2xl md:text-3xl xl:text-4xl'>
-                    I'm a full-stack web deveoper.
-                    {/* I'm a computer scientist */}
-                    {/* I'm a student */}
-                    {/* I'm a teacher */}
-                </p>
+                <h1 className='flex flex-row md:flex-row space-x-2 md:space-x-5 justify-center items-center text-white text-2xl md:text-5xl xl:text-6xl'>
+                    <span>Hello, I'm</span>
+                    <span className='text-primary_yellow inline-block'> Jason Le</span>
+                </h1>
+
+                <h1 className='flex flex-row md:flex-row space-x-3 md:space-x-4 justify-center items-center text-white text-2xl md:text-3xl xl:text-4xl'>
+                    <span>{'I\'m a'}</span>
+                    <span className="flex flex-row  justify-center items-center underline decoration-primary_yellow">
+                        <Typewriter
+                            words={['web developer', 'student', 'teacher']}
+                            loop={0}
+                            typeSpeed={35}
+                            deleteSpeed={50}
+                            delaySpeed={1000}
+                        />
+                    </span>
+                </h1>
+
+
             </div>
         </div>
 
