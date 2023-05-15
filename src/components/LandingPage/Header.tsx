@@ -3,6 +3,7 @@ import Particles from 'react-tsparticles';
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from 'tsparticles'
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
+import smallDeer from "../../assets/sunrise2.svg"
 
 
 const Header = (enabled: any) => {
@@ -78,12 +79,12 @@ const Header = (enabled: any) => {
         },
         particles: {
             color: {
-                value: "#ff0000",
-                animation: {
-                    enable: true,
-                    speed: 20,
-                    sync: true
-                }
+                value: "#ece75f",
+                // animation: {
+                //     enable: true,
+                //     speed: 20,
+                //     sync: true
+                // }
             },
             links: {
                 blink: false,
@@ -136,12 +137,12 @@ const Header = (enabled: any) => {
             },
             scale: 1,
             type: "inline",
-            url: "https://particles.js.org/images/smalldeer.svg"
+            url: smallDeer,
         },
         background: {
             color: "#000000",
             image: "",
-            position: "0% 0%",
+            position: "50% 50%",
             repeat: "no-repeat",
             size: "cover"
         },
@@ -158,8 +159,15 @@ const Header = (enabled: any) => {
             <Particles className="h-screen" id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options}
             />
             <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <p className='flex flex-col justify-center items-center text-[#FFFFFF] text-3xl md:text-5xl xl:text-6xl'>Hi, I'm Jason Le</p>
-                <p className='flex flex-col justify-center items-center text-[#FFFFFF] text-2xl md:text-3xl xl:text-4xl'>I'm a web developer</p>
+                <p className='flex flex-col justify-center items-center text-[#FFFFFF] text-3xl md:text-5xl xl:text-6xl'>
+                    Hello, I'm Jason Le
+                </p>
+                <p className='flex flex-col justify-center items-center text-[#FFFFFF] text-2xl md:text-3xl xl:text-4xl'>
+                    I'm a full-stack web deveoper.
+                    {/* I'm a computer scientist */}
+                    {/* I'm a student */}
+                    {/* I'm a teacher */}
+                </p>
             </div>
         </div>
 
