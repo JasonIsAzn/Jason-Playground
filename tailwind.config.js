@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         bg_grey: "#121212",
         grey: {
-          "yellow-12": "#2C2C1B", // 12% yellow mixed
+          "yellow-5": "#1d1d16", // 12% yellow mixed
         },
         primary_yellow: {
           DEFAULT: "#ECE75F",

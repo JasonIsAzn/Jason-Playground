@@ -3,7 +3,7 @@ import Particles from 'react-tsparticles';
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from 'tsparticles'
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
-import sunRise from "../../assets/sunrise2.svg"
+import sunRise from "../../assets/sunrise.svg"
 
 import { Typewriter } from 'react-simple-typewriter'
 
@@ -149,7 +149,9 @@ const Header = (enabled: any) => {
         },
     } as ISourceOptions;
 
-
+    function goDown() {
+        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    }
 
     return (
         <div>
@@ -173,13 +175,13 @@ const Header = (enabled: any) => {
                         />
                     </span>
                 </h1>
-
-
             </div>
-        </div>
-
+            <button id="go-down-button" onClick={goDown}
+                className="absolute m-6 mr-8 bottom-0 right-0 transform -translate-x-0 -translate-y-0 z-10 animate-bounce object-scale-down h-14  w-14">
+                <img src={require("../../assets/arrow.png")} />
+            </button>
+        </div >
     );
-
 }
 
 export default Header;
