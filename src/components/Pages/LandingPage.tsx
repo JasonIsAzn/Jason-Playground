@@ -9,7 +9,6 @@ const LandingPage = () => {
             <Header />
             <div className=''>
                 <Navbar />
-
                 <div className='flex flex-col p-20 justify-center items-center h-screen bg-[#F5F5F5]'>
                     <p className='flex flex-col justify-center items-center'>AboutMe</p>
                 </div>
