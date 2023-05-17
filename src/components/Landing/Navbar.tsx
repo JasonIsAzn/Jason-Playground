@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 // import { Transition } from '@headlessui/react'
 
 const Navbar = () => {
     const navlinks = [
-        { title: "About", path: "/" },
-        { title: "Projects", path: "/" },
-        { title: "Resume", path: "/" },
+        { title: "About", path: "/#section-about" },
+        { title: "Projects", path: "/#section-projects" },
+        { title: "Resume", path: "/#section-resume" },
     ]
 
     const [open, setOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navbar = () => {
 
     // TODO: change to isShowing, work on animation
     return (
-        <div id="navbar" className="sticky top-0">
+        <div id="navbar" className="sticky top-0    ">
             {/* <Transition
                 show={true}
                 enter="transition ease duration-700 transform"
@@ -59,15 +60,11 @@ const Navbar = () => {
 
                         {/* NavLinks */}
                         <div className="hidden md:block ">
-                            <div className="flex justify-end items-baseline space-x-4">
+                            <div className="flex justify-end items-baseline space-x-4 text-white">
                                 {navlinks.map((link, index) => (
-                                    <a
-                                        key={index}
-                                        href="/#"
-                                        className="text-white px-3 py-2 rounded"
-                                    >
+                                    <HashLink smooth to={link.path}>
                                         {link.title}
-                                    </a>
+                                    </HashLink>
                                 ))}
                             </div>
                         </div>

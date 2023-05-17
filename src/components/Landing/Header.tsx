@@ -3,7 +3,7 @@ import Particles from 'react-tsparticles';
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from 'tsparticles'
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
-import sunRise from "../../assets/sunrise.svg"
+import sunRise from "../../assets/lines.svg"
 
 import { Typewriter } from 'react-simple-typewriter'
 
@@ -116,7 +116,7 @@ const Header = (enabled: any) => {
                 type: "circle"
             },
             size: {
-                value: 1
+                value: 2
             }
         },
         polygon: {
