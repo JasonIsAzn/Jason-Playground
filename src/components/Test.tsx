@@ -1,12 +1,30 @@
+import React, { useState } from 'react'
+
 function Test() {
+    const [switchText, setSwitchText] = useState(true);
+
+
+
     return (
-        <div className="grid grid-cols-2 gap-4">
+        <div>
+            <div className="bg-white w-52 h-72 m-8 static hover:border-black hover:border hover:border-dashed"
+                onMouseEnter={() => setSwitchText(false)}
+                onMouseLeave={() => setSwitchText(true)}
 
-            <div className="bg-green-300 w-52 h-72 m-8 static rounded-lg ">
-                <div className="bg-white w-52 h-72 hover:-m-2 absolute rounded-lg shadow-lg hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
-                    <h1 className="m-4 text-2xl font-bold">Wat is Lorem Ipsum?</h1>
-
-                    <p className="m-4 text-sm">Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak</p>
+            >
+                <div className="bg-white w-52 h-72 hover:-m-3 border hover:border-primary_yellow border-black absolute  hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
+                    {switchText && (
+                        <div>
+                            <h1 className="m-4 text-4xl font-bold">Project 1</h1>
+                            <p className="m-4 text-4xl">Short Description</p>
+                        </div>
+                    )}
+                    {!switchText && (
+                        <div>
+                            <h1 className="m-4 text-4xl font-bold">Details</h1>
+                            <p className="m-4 text-4xl">Learn More</p>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

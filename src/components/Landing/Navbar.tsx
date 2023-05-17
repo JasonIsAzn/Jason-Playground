@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { HashLink, NavHashLink } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 // import { Transition } from '@headlessui/react'
 
 const Navbar = () => {
@@ -37,7 +37,7 @@ const Navbar = () => {
 
     // TODO: change to isShowing, work on animation
     return (
-        <div id="navbar" className="sticky top-0    ">
+        <div id="navbar" className="sticky top-0 z-0">
             {/* <Transition
                 show={true}
                 enter="transition ease duration-700 transform"
