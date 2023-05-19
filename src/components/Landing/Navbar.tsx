@@ -8,6 +8,7 @@ const Navbar = () => {
         { title: "About", path: "/#section-about" },
         { title: "Projects", path: "/#section-projects" },
         { title: "Resume", path: "/#section-resume" },
+        { title: "Contact", path: "/#section-contact" }
     ]
 
     const [open, setOpen] = useState(false);

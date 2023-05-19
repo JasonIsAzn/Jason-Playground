@@ -7,7 +7,7 @@ const Projects = () => {
 
 
     return (
-        <div id="section-projects" className='flex flex-col justify-center items-center py-12 bg-[#F3F3F3]'>
+        <div id="section-projects" className='flex flex-col justify-center items-center py-12 bg-[#F5F5F1]'>
             <h1 className='text-5xl md:text-6xl lg:text-8xl font-semibold pb-14'>Projects</h1>
             <div className="flex flex-row flex-wrap justify-center items-center">
                 <div className="bg-white w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed hover:border-2 rounded border-2"
@@ -31,7 +31,7 @@ const Projects = () => {
                                 <p className="flex flex-col text-lg space-y-1">
                                     <span> Aggies Compute is the free resource hub designed to support students throughout their college journey.</span>
                                     <span> We aim to centralize valuable resources and create comprehensive step-by-step produceures to cater to all learning styles.</span>
-                                    <a href='/#' className='pt-8 text-base underline decoration-primary_yellow decoration-2 '>Learn More</a>
+                                    <a href='/#' className='pt-8 text-base underline decoration-primary_yellow decoration-2'>Learn More</a>
                                 </p>
                             </div>
                         )}
