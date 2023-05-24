@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { HashLink } from 'react-router-hash-link';
-// import { Transition } from '@headlessui/react'
 
 const Navbar = () => {
     const navlinks = [

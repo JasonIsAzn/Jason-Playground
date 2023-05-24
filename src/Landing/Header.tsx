@@ -3,7 +3,7 @@ import Particles from 'react-tsparticles';
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from 'tsparticles'
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
-import sunRise from "../../assets/lines.svg"
+import sunRise from "../assets/lines.svg"
 
 import { Typewriter } from 'react-simple-typewriter'
 
@@ -178,7 +178,7 @@ const Header = (enabled: any) => {
             </div>
             <button id="go-down-button" onClick={goDown}
                 className="absolute m-6 mr-8 bottom-0 right-0 transform -translate-x-0 -translate-y-0 z-10 animate-bounce object-scale-down h-14  w-14">
-                <img src={require("../../assets/arrow.png")} alt="go Down Button" />
+                <img src={require("../assets/arrow.png")} alt="go Down Button" />
             </button>
         </div >
     );

@@ -8,7 +8,7 @@ const Projects = () => {
 
     return (
         <div id="section-projects" className='flex flex-col justify-center items-center py-12 bg-[#F5F5F1]'>
-            <h1 className='text-5xl md:text-6xl lg:text-8xl font-semibold pb-14'>Projects</h1>
+            <h1 className='text-5xl md:text-6xl lg:text-8xl font-semibold py-14'>Projects</h1>
             <div className="flex flex-row flex-wrap justify-center items-center">
                 <div className="bg-white w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed hover:border-2 rounded border-2"
                     onMouseEnter={() => setSwitchText1(false)}
@@ -18,7 +18,7 @@ const Projects = () => {
                         {switchText1 && (
                             <div className='flex flex-col justify-end'>
                                 <img
-                                    src={require("../../assets/ac_logo.png")}
+                                    src={require("../assets/ac_logo.png")}
                                     alt="aggie compute logo"
                                     className='h-14 w-14'>
                                 </img>
@@ -47,7 +47,7 @@ const Projects = () => {
                         {switchText3 && (
                             <div className='flex flex-col justify-end'>
                                 <img
-                                    src={require("../../assets/shpe.png")}
+                                    src={require("../assets/shpe.png")}
                                     alt="shpe logo"
                                     className='h-14 w-14'>
                                 </img>
@@ -77,7 +77,7 @@ const Projects = () => {
                         {switchText2 && (
                             <div className='flex flex-col justify-end'>
                                 <img
-                                    src={require("../../assets/pizza.png")}
+                                    src={require("../assets/pizza.png")}
                                     alt="pizza logo"
                                     className='h-28 w-28 -m-4 -mb-8'>
                                 </img>

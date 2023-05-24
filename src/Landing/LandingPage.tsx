@@ -1,5 +1,5 @@
 import Header from './Header';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 import About from './About';
 import Projects from './Projects'
 import Resume from './Resume'
