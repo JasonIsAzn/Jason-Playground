@@ -56,7 +56,12 @@ const Navbar = () => {
                             </a>
                         </div>
 
-                        <div className="flex items-baseline justify-center md:text-3xl text-white font-semibold font-mono">JASON LE</div>
+                        <div className="flex items-baseline justify-center md:text-3xl text-white font-semibold font-mono cursor-pointer"
+                        >
+                            <HashLink smooth to="/#">
+                                JASON LE
+                            </HashLink>
+                        </div>
 
                         {/* NavLinks */}
                         <div className="hidden md:block ">

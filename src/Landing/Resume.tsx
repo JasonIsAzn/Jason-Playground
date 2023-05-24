@@ -30,7 +30,7 @@ const resume_content = [
             </div>
     },
 
-    { title: 'Experience', content: '' },
+    { title: 'Experience', content: 'TB' },
 ]
 
 const Resume = () => {
@@ -51,13 +51,15 @@ const Resume = () => {
 
                 <div className="col-span-5 col-start-2 lg:col-start-0 lg:col-span-6 mt-12 w-full ">
                     <div className="flex-col">
-                        <div></div>
-                        <div>
+                        <div className='divide-y divide-black'>
+                            <div></div>
                             {
                                 resume_content.map((item, index) => (
                                     <Accordion index={index} datas={item} />
                                 ))
                             }
+                            <div></div>
+
                         </div>
                         <div></div>
                     </div>
