@@ -1,22 +1,29 @@
+import Accordion from '../components/Accordion';
+import { useEffect, useState } from 'react';
 
 function Test() {
+    const [list, setList] = useState([
+        { title: 'Education', content: 'Texas A&M University' },
+        { title: 'Skills', content: 'React, TypeScript, Node.js, Express, MongoDB, Python, Java, C++' },
+        { title: 'Experience', content: 'N/A' },
+    ]);
+
+    useEffect(() => {
+
+    }, []);
+
     return (
-        <div className="bg-[#F2F2F2] h-screen flex justify-center items-center">
-            <div className="list">
-                {/* Items */}
-                <div className="bg-[#E9E9E9] p-5 border border-[#C9C6C655] rounded-md w-[280px] group is-active">
-                    <div className="flex items-center">
-                        <div className="w-full 
-                        group-[.is-active]:font-bold">Education</div>
-                        <div className="text-xl rotate-90
-                        group-[.is-active]:rotate-[270deg]">{">"}</div>
-                    </div>
-                    <div className="overflow-hidden max-h-0 
-                    group-[.is-active]:max-h-[100px]">Texas A&M University</div>
-                </div>
+        <div className='bg-[#f2f2f2] h-screen flex justify-center items-center'>
+            <div className='list'>
+                {
+                    list.map((item, index) => (
+                        <Accordion index={index} datas={item} />
+                    ))
+                }
             </div>
+
         </div>
-    )
+    );
 }
 
 export default Test;
