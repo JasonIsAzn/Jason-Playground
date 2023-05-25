@@ -14,12 +14,12 @@ const resume_content = [
     {
         title: 'Skills',
         content:
-            <div className='grid grid-cols-3 gap-y-4 font-base text-xl'>
+            <div className='grid grid-cols-2 gap-y-2 sm:grid-cols-3 sm:gap-y-4 font-base text-xl'>
                 <div>C++</div>
                 <div>Python</div>
                 <div>GitHub</div>
 
-                <div>JavaScript/TypeScript</div>
+                <div>Java/TypeScript</div>
                 <div>React</div>
                 <div>SQL</div>
 
@@ -49,7 +49,7 @@ const Resume = () => {
                     </a>
                 </div>
 
-                <div className="col-span-5 col-start-2 lg:col-start-0 lg:col-span-6 mt-12 w-full ">
+                <div className="col-span-12 col-start-2 lg:col-start-0 lg:col-span-6 mt-12 w-full">
                     <div className="flex-col">
                         <div className='divide-y divide-black'>
                             <div></div>

@@ -9,8 +9,8 @@ const Projects = () => {
     return (
         <div id="section-projects" className='flex flex-col justify-center items-center py-12 bg-[#F5F5F1]'>
             <h1 className='text-5xl md:text-6xl lg:text-8xl font-semibold py-14'>Projects</h1>
-            <div className="flex flex-row flex-wrap justify-center items-center">
-                <div className="bg-white w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed hover:border-2 rounded border-2"
+            <div className="flex flex-row flex-wrap justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 ">
+                <div className="bg-white w-[90%] sm:w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed hover:border-2 rounded border-2"
                     onMouseEnter={() => setSwitchText1(false)}
                     onMouseLeave={() => setSwitchText1(true)}
                 >
@@ -39,7 +39,7 @@ const Projects = () => {
                 </div>
 
 
-                <div className="bg-white w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed hover:border-2 rounded border-2"
+                <div className="bg-white w-[90%] sm:w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed hover:border-2 rounded border-2"
                     onMouseEnter={() => setSwitchText3(false)}
                     onMouseLeave={() => setSwitchText3(true)}
                 >
@@ -69,7 +69,7 @@ const Projects = () => {
                 </div>
 
 
-                <div className="bg-white w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed  hover:border-2 rounded border-2"
+                <div className="bg-white w-[90%] sm:w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed  hover:border-2 rounded border-2"
                     onMouseEnter={() => setSwitchText2(false)}
                     onMouseLeave={() => setSwitchText2(true)}
                 >
