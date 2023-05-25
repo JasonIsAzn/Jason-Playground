@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { HashLink } from 'react-router-hash-link';
+import './underline.css'
 
 const Navbar = () => {
     const navlinks = [
@@ -17,36 +18,9 @@ const Navbar = () => {
         console.log(open);
     };
 
-    // const [isShowing, setIsShowing] = useState(true)
-    // function NavbarTransitionFixed() {
-    //     const navbar = document.getElementById("navbar");
-    //     if (document.body.scrollTop > window.innerHeight + 55 || document.documentElement.scrollTop > window.innerHeight + 55) {
-    //         setIsShowing(false);
-    //         navbar?.classList.add("sticky");
-    //         navbar?.classList.add("top-0");
-    //         setIsShowing(true);
-    //     } else {
-    //         navbar?.classList.remove("sticky");
-    //         navbar?.classList.remove("top-0");
-    //     }
-
-    // window.onscroll = function () { NavbarTransitionFixed() };
-    // }
-
-
-
-    // TODO: change to isShowing, work on animation
     return (
         <div id="navbar" className="sticky top-0 z-0">
-            {/* <Transition
-                show={true}
-                enter="transition ease duration-700 transform"
-                enterFrom="opacity-0 -translate-y-full"
-                enterTo="opacity-100 translate-y-0"
-                leave="transition ease duration-1000 transform"
-                leaveFrom="opacity-100 translate-y-0"
-                leaveTo="opacity-0 -translate-y-full"
-            > */}
+
             <div className="bg-grey-yellow-5">
                 <div className="mx-auto sm:px-6 lg:px-8">
                     <div className="grid grid-cols-3 items-center justify-center h-14">
@@ -68,8 +42,10 @@ const Navbar = () => {
                             <div className="flex justify-end items-baseline space-x-4 text-white">
                                 {navlinks.map((link, index) => (
                                     <HashLink smooth to={link.path}>
-                                        {link.title}
+                                        <span className="text-xl leading-tightlink link-underline link-underline-black hover:text-[#F2F3F5]"> {link.title} </span>
                                     </HashLink>
+
+
                                 ))}
                             </div>
                         </div>
