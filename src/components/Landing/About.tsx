@@ -39,13 +39,12 @@ const About = () => {
                 {/* Expanded Section */}
                 {open && (
                     <div className='col-span-11 col-start-2'>
-                        <div className='col-span-5 col-start-2 mt-24 md:text-4xl lg:text-4xl'>Test</div>
-
+                        <div className='col-start-2 flex justify-center items-center mt-48 md:text-4xl lg:text-4xl'></div>
                     </div>
                 )}
 
                 {/* Button */}
-                <div className="col-start-9 col-span-2 flex justify-center items-center mt-16 cursor-pointer">
+                <div className={"col-span-2 flex justify-center items-center mt-16 cursor-pointer " + (open ? 'col-start-11' : 'col-start-9')}>
                     <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64')}
                         onMouseEnter={() => setIsHovered(false)}
                         onMouseLeave={() => setIsHovered(true)}
