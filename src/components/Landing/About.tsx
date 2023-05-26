@@ -30,14 +30,19 @@ const About = () => {
                 </div>
 
                 {/* Profile Image */}
-                <div className="col-span-10 col-start-2 lg:col-start-0 lg:col-span-6 flex justify-center items-center">
+                <div className="col-span-10 col-start-2 lg:col-span-7 flex justify-center items-center">
                     <div className="mt-16 w-[60%] sm:1/3 lg:mt-0 lg:w-1/2">
                         <img src={require("../../assets/profile.jpg")} alt="profile" className="rounded-full" />
                     </div>
                 </div>
 
                 {/* Expanded Section */}
+                {open && (
+                    <div className='col-span-11 col-start-2'>
+                        <div className='col-span-5 col-start-2 mt-24 md:text-4xl lg:text-4xl'>Test</div>
 
+                    </div>
+                )}
 
                 {/* Button */}
                 <div className="col-start-9 col-span-2 flex justify-center items-center mt-16 cursor-pointer">

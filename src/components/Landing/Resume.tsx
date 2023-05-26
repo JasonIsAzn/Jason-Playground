@@ -42,9 +42,9 @@ const Resume = () => {
     return (
         <div id="section-resume" className='p-4 pt-24 pr-16 h-full pb-24 bg-[#F5F5F5]'>
             <div className="grid grid-cols-12">
-                <div className="col-span-5 col-start-2 my-12 mb-24">
+                <div className={"col-start-2 my-12 mb-24 " + (open ? 'col-span-12' : 'col-span-5')}>
                     {/* Title */}
-                    <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold pb-14'>My Resume</h1>
+                    <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold pb-8'>My Resume</h1>
                     <a
                         href="Jason-Le-Resume.pdf"
                         download="Jason-Le-Resume.pdf"
@@ -53,10 +53,16 @@ const Resume = () => {
                         PDF of current resume
                     </a>
 
+                    {/* Expanded */}
+                    {open && (
+                        <div className='col-span-11 col-start-2'>
+                            <div className='col-span-5 col-start-2 mt-24 md:text-4xl lg:text-4xl'>Test</div>
 
+                        </div>
+                    )}
 
                     {/* Button */}
-                    <div className="flex justify-center items-center my-32 mr-[300px] cursor-pointer">
+                    <div className={"flex   items-center cursor-pointer " + (open ? 'justify-end mr-8' : 'justify-center my-32 mr-[300px]')}>
                         <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64')}
                             onMouseEnter={() => setIsHovered(false)}
                             onMouseLeave={() => setIsHovered(true)}
@@ -76,28 +82,31 @@ const Resume = () => {
 
                 </div>
 
+
                 {/* Accordian */}
-                <div className="col-span-12 col-start-2 lg:col-start-0 lg:col-span-6 mt-12 w-full">
-                    <div className="flex-col">
-                        <div className='divide-y divide-black'>
-                            <div></div>
-                            {
-                                resume_content.map((item, index) => (
-                                    <Accordion index={index} datas={item} />
-                                ))
-                            }
-                            <div></div>
+                {!open && (
+                    <div className="col-span-12 col-start-2 lg:col-start-0 lg:col-span-6 mt-12 w-full">
+                        <div className="flex-col">
+                            <div className='divide-y divide-black'>
+                                <div></div>
+                                {
+                                    resume_content.map((item, index) => (
+                                        <Accordion index={index} datas={item} />
+                                    ))
+                                }
+                                <div></div>
 
+                            </div>
+                            <div></div>
                         </div>
-                        <div></div>
                     </div>
-                </div>
 
+                )}
 
 
             </div>
 
-        </div>
+        </div >
     )
 }
 
