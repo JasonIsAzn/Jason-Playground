@@ -1,4 +1,9 @@
+import { useState } from 'react'
+
+
 const About = () => {
+    const [isHovered, setIsHovered] = useState(true);
+
     return (
         <div id="section-about" className='p-2 h-full pb-24 bg-[#F5F5F5]'>
             <div className="grid grid-cols-12">
@@ -23,6 +28,24 @@ const About = () => {
                         <img src={require("../../assets/profile.jpg")} alt="profile" className="rounded-full" />
                     </div>
                 </div>
+
+                <div className="col-start-9 col-span-2 flex justify-center items-center mt-16">
+                    <div className="flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 hover:w-52 hover:x-2 hover:sm:w-64"
+                        onMouseEnter={() => setIsHovered(false)}
+                        onMouseLeave={() => setIsHovered(true)}
+                    >
+                        {isHovered ? (
+                            <div className='text-white font-semibold cursor-pointer'>
+                                +
+                            </div>
+                        ) : (
+                            <div className='flex overflow-hidden whitespace-nowrap text-white text-lg cursor-pointer'>
+                                Learn more about me!
+                            </div>
+                        )}
+                    </div>
+                </div>
+
 
             </div>
 

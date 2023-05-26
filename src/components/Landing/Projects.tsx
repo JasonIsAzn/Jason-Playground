@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const Projects = () => {
     const [switchText1, setSwitchText1] = useState(true);
     const [switchText2, setSwitchText2] = useState(true);
     const [switchText3, setSwitchText3] = useState(true);
+
+    const [isHovered, setIsHovered] = useState(true);
+
 
 
     return (
@@ -69,7 +72,7 @@ const Projects = () => {
                 </div>
 
 
-                <div className="bg-white w-[90%] sm:w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed  hover:border-2 rounded border-2"
+                <div className="bg-white w-[90%] sm:w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed hover:border-2 rounded border-2"
                     onMouseEnter={() => setSwitchText2(false)}
                     onMouseLeave={() => setSwitchText2(true)}
                 >
@@ -97,7 +100,26 @@ const Projects = () => {
                     </div>
                 </div>
 
+
             </div>
+
+            <div className="flex justify-center items-center mt-16">
+                <div className="flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 hover:w-48 hover:x-2 hover:sm:w-64"
+                    onMouseEnter={() => setIsHovered(false)}
+                    onMouseLeave={() => setIsHovered(true)}
+                >
+                    {isHovered ? (
+                        <div className='text-white font-semibold cursor-pointer'>
+                            +
+                        </div>
+                    ) : (
+                        <div className='flex overflow-hidden whitespace-nowrap text-white text-lg cursor-pointer'>
+                            Project details
+                        </div>
+                    )}
+                </div>
+            </div>
+
         </div>
     )
 }

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Accordion from '../Accordion';
 
 const resume_content = [
@@ -34,11 +35,13 @@ const resume_content = [
 ]
 
 const Resume = () => {
+    const [isHovered, setIsHovered] = useState(true);
+
 
     return (
         <div id="section-resume" className='p-4 pt-24 pr-16 h-full pb-24 bg-[#F5F5F5]'>
             <div className="grid grid-cols-12">
-                <div className="col-span-5 col-start-2 space-y-2 my-12 mb-24">
+                <div className="col-span-5 col-start-2 my-12 mb-24">
                     <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold pb-14'>My Resume</h1>
                     <a
                         href="Jason-Le-Resume.pdf"
@@ -47,6 +50,24 @@ const Resume = () => {
                     >
                         PDF of current resume
                     </a>
+
+                    <div className="flex justify-center items-center my-32 mr-[300px]">
+                        <div className="flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 hover:w-48 hover:x-2 hover:sm:w-64"
+                            onMouseEnter={() => setIsHovered(false)}
+                            onMouseLeave={() => setIsHovered(true)}
+                        >
+                            {isHovered ? (
+                                <div className='text-white font-semibold cursor-pointer'>
+                                    +
+                                </div>
+                            ) : (
+                                <div className='flex overflow-hidden whitespace-nowrap text-white text-lg cursor-pointer'>
+                                    My full resume
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
                 </div>
 
                 <div className="col-span-12 col-start-2 lg:col-start-0 lg:col-span-6 mt-12 w-full">
@@ -64,6 +85,8 @@ const Resume = () => {
                         <div></div>
                     </div>
                 </div>
+
+
 
             </div>
 
