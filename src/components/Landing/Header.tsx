@@ -155,9 +155,13 @@ const Header = (enabled: any) => {
 
     return (
         <div id="section-header">
+            {/* Background */}
             <Particles className="h-screen" id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options}
             />
+
+            {/* Title */}
             <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+
                 <h1 className='flex flex-row md:flex-row space-x-2 md:space-x-5 justify-center items-center text-white text-2xl md:text-5xl xl:text-6xl'>
                     <span>Hello, I'm</span>
                     <span className='text-primary_yellow inline-block'> Jason Le</span>
@@ -176,6 +180,8 @@ const Header = (enabled: any) => {
                     </span>
                 </h1>
             </div>
+
+            {/* Down Button */}
             <button id="go-down-button" onClick={goDown}
                 className="absolute m-6 mr-8 bottom-0 right-0 transform -translate-x-0 -translate-y-0 z-10 animate-bounce object-scale-down h-14  w-14">
                 <img src={require("../../assets/arrow.png")} alt="go Down Button" />
