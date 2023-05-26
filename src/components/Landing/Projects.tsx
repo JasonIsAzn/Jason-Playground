@@ -18,7 +18,7 @@ const Projects = () => {
                         {switchText1 && (
                             <div className='flex flex-col justify-end'>
                                 <img
-                                    src={require("../assets/ac_logo.png")}
+                                    src={require("../../assets/ac_logo.png")}
                                     alt="aggie compute logo"
                                     className='h-14 w-14'>
                                 </img>
@@ -47,7 +47,7 @@ const Projects = () => {
                         {switchText3 && (
                             <div className='flex flex-col justify-end'>
                                 <img
-                                    src={require("../assets/shpe.png")}
+                                    src={require("../../assets/shpe.png")}
                                     alt="shpe logo"
                                     className='h-14 w-14'>
                                 </img>
@@ -77,7 +77,7 @@ const Projects = () => {
                         {switchText2 && (
                             <div className='flex flex-col justify-end'>
                                 <img
-                                    src={require("../assets/pizza.png")}
+                                    src={require("../../assets/pizza.png")}
                                     alt="pizza logo"
                                     className='h-28 w-28 -m-4 -mb-8'>
                                 </img>

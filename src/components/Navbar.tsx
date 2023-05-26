@@ -19,7 +19,7 @@ const Navbar = () => {
     };
 
     return (
-        <div id="navbar" className="sticky top-0 z-0">
+        <div id="section-navbar" className="sticky top-0 z-0">
 
             <div className="bg-grey-yellow-5">
                 <div className="mx-auto sm:px-6 lg:px-8">
@@ -45,7 +45,6 @@ const Navbar = () => {
                                         <span className="text-xl leading-tightlink link-underline link-underline-black hover:text-[#F2F3F5]"> {link.title} </span>
                                     </HashLink>
 
-
                                 ))}
                             </div>
                         </div>
@@ -67,13 +66,9 @@ const Navbar = () => {
                             <div className='col-span-3 md:hidden'>
                                 <div className="mt-2 flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-grey-yellow-5 w-full">
                                     {navlinks.map((link, index) => (
-                                        <a
-                                            key={index}
-                                            href="/#"
-                                            className="ml-4 text-white rounded-md font-medium"
-                                        >
-                                            {link.title}
-                                        </a>
+                                        <HashLink smooth to={link.path}>
+                                            <span className="text-xl leading-tightlink link-underline link-underline-black text-white hover:text-[#F2F3F5]"> {link.title} </span>
+                                        </HashLink>
                                     ))}
                                 </div>
                             </div>

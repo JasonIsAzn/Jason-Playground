@@ -1,7 +1,7 @@
 
 function Footer() {
     return (
-        <div className="className='flex p-8  bg-[#F5F5F5]">
+        <div id="section-footer" className="className='flex p-8  bg-[#F5F5F5]">
             © 2023 Jason Le. All Rights Reserved.
         </div>
     )

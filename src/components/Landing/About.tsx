@@ -1,4 +1,3 @@
-
 const About = () => {
     return (
         <div id="section-about" className='p-2 h-full pb-24 bg-[#F5F5F5]'>
@@ -21,7 +20,7 @@ const About = () => {
                 </div>
                 <div className="col-span-10 col-start-2 lg:col-start-0 lg:col-span-6 flex justify-center items-center">
                     <div className="mt-16 w-[60%] sm:1/3 lg:mt-0 lg:w-1/2">
-                        <img src={require("../assets/profile.jpg")} alt="profile" className="rounded-full" />
+                        <img src={require("../../assets/profile.jpg")} alt="profile" className="rounded-full" />
                     </div>
                 </div>
 

@@ -1,20 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@responsive {
-  .underline-custom {
-    @apply relative no-underline cursor-pointer;
-  }
-
-  .underline-custom::after {
-    content: "";
-    background: rgba(56, 178, 172, var(--text-opacity));
-    @apply absolute left-0 bottom-0 w-full h-1 pt-1 transform origin-right scale-x-0 transition-transform duration-200 ease-in;
-  }
-
-  .underline-custom:hover::after,
-  .underline-custom:focus::after {
-    @apply transform origin-left scale-x-100;
-  }
-}

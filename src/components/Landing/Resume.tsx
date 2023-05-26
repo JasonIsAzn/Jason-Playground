@@ -1,4 +1,4 @@
-import Accordion from '../components/Accordion';
+import Accordion from '../Accordion';
 
 const resume_content = [
     {
