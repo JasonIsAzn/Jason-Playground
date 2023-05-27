@@ -15,6 +15,9 @@ module.exports = {
           DEFAULT: "#ECE75F",
         },
       },
+      scale: {
+        "-100": "-1",
+      },
     },
   },
   plugins: [require("tw-elements/dist/plugin.cjs")],

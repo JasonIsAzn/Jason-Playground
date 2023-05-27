@@ -154,7 +154,7 @@ const Header = (enabled: any) => {
     }
 
     return (
-        <div id="section-header">
+        <div id="section-header" className=''>
             {/* Background */}
             <Particles className="h-screen" id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options}
             />

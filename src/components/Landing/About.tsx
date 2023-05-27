@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { Ripple, initTE } from "tw-elements";
@@ -6,17 +6,26 @@ import { Ripple, initTE } from "tw-elements";
 initTE({ Ripple });
 
 const About = () => {
-    const [isHovered, setIsHovered] = useState(true);
-    const [open, setOpen] = useState(false);
-    const [item, setItem] = useState(0);
+    const [isHovered, setIsHovered] = useState(true); // button hover
+    const [open, setOpen] = useState(false); // If expanded is open
+    const [item, setItem] = useState(0); // item chosen in expanded section
+    const [itemHovered, setItemHovered] = useState<number | null>(null); // item hover effect
 
 
-    function personalItem(index: any) {
-        // 0 - None 1-Anime 2-Musician 3-Gym
-        setItem(index);
-        console.log('test', item);
+    console.log("test", itemHovered)
+
+    useEffect(() => {
+        setItemHovered(null);
+    }, [item])
+
+    function delay(ms: number) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
-
+    async function resetItemHover(index: number) {
+        setItem(index);
+        await delay(20);
+        setItemHovered(null);
+    }
 
     function classNames(...classes: any) {
         return classes.filter(Boolean).join(' ')
@@ -56,14 +65,16 @@ const About = () => {
                 {open && (
                     <div className='col-span-11 col-start-2'>
                         <div className='col-start-2 flex justify-center items-center mt-48 md:text-4xl'>
-                            <Menu as="div" className="relative inline-block text-left">
+                            <Menu as="div" className="relative inline-block text-left z-0">
                                 <Menu.Button className="">
                                     <button
                                         className="flex items-center border-b border-black whitespace-nowrap bg-[#F5F5F5] px-6 pl-2 pb-2 pt-2.5 leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#fbfbfb] transition duration-150 ease-in-out hover:bg-neutral-100 hover:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] focus:bg-neutral-100 focus:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] focus:outline-none focus:ring-0 active:bg-neutral-200 active:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] motion-reduce:transition-none"
                                         type="button"
                                         aria-expanded="false"
-                                        data-te-ripple-init>
-                                        <span className="mr-6 w-2">
+                                        data-te-ripple-init
+                                        onClick={() => setItemHovered(null)}
+                                    >
+                                        <span className="mr-6 w-2 transform -scale-y-100">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 20 20"
@@ -82,6 +93,8 @@ const About = () => {
                                     </button>
                                 </Menu.Button>
 
+
+
                                 <Transition
                                     as={Fragment}
                                     enter="transition ease-out duration-100"
@@ -91,7 +104,7 @@ const About = () => {
                                     leaveFrom="transform opacity-100 scale-100"
                                     leaveTo="transform opacity-0 scale-95"
                                 >
-                                    <Menu.Items className="absolute left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none divide-y divide-gray-100">
+                                    <Menu.Items className="-top-2 transform -translate-y-full absolute left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none divide-y divide-gray-100">
                                         <Menu.Item>
                                             {({ active }) => (
                                                 <div
@@ -99,7 +112,9 @@ const About = () => {
                                                         active ? 'cursor-pointer' : 'text-gray-700',
                                                         'flex justify-center items-center text-3xl px-4 py-2 ' + (item === 1 ? 'hidden' : '')
                                                     )}
-                                                    onClick={() => personalItem(1)}
+                                                    onClick={() => resetItemHover(1)}
+                                                    onMouseEnter={() => setItemHovered(0)}
+                                                    onMouseLeave={() => setItemHovered(null)}
                                                 >
                                                     Anime
                                                 </div>
@@ -113,8 +128,9 @@ const About = () => {
                                                         active ? 'cursor-pointer ' : 'text-gray-700',
                                                         'flex justify-center items-center text-3xl px-4 py-2 ' + (item === 2 ? 'hidden' : '')
                                                     )}
-                                                    onClick={() => personalItem(2)}
-
+                                                    onClick={() => resetItemHover(2)}
+                                                    onMouseEnter={() => setItemHovered(1)}
+                                                    onMouseLeave={() => setItemHovered(null)}
                                                 >
                                                     Musician
                                                 </div>
@@ -128,7 +144,9 @@ const About = () => {
                                                         active ? 'cursor-pointer' : 'text-gray-700',
                                                         'flex justify-center items-center text-3xl px-4 py-2 ' + (item === 3 ? 'hidden' : '')
                                                     )}
-                                                    onClick={() => personalItem(3)}
+                                                    onClick={() => resetItemHover(3)}
+                                                    onMouseEnter={() => setItemHovered(2)}
+                                                    onMouseLeave={() => setItemHovered(null)}
                                                 >
                                                     Gym
                                                 </div>
@@ -142,7 +160,9 @@ const About = () => {
                                                         active ? 'cursor-pointer' : 'text-gray-700',
                                                         'flex justify-center items-center text-3xl px-4 py-2 ' + (item === 0 ? 'hidden' : '')
                                                     )}
-                                                    onClick={() => personalItem(0)}
+                                                    onClick={() => resetItemHover(0)}
+                                                    onMouseEnter={() => setItemHovered(null)}
+                                                    onMouseLeave={() => setItemHovered(null)}
                                                 >
                                                     Topics
                                                 </div>
@@ -156,31 +176,138 @@ const About = () => {
                             <span className={item === 0 ? "" : "hidden"}>about my personal interest</span>
                             <span className={item === 1 ? "" : "hidden"}>that I'm currently watching and enjoy.</span>
                             <span className={item === 2 ? "" : "hidden"}>that I'm obsessed with.</span>
-                            <span className={item === 3 ? "" : "hidden"}>rats I look up to.</span>
+                            <span className={item === 3 ? "" : "hidden"}>rats that inspire me.</span>
                         </div>
-                        <div className='col-span-10 col-start-2 flex flex-row justify-center items-center mt-24 space-x-16 mx-[300px]'>
 
-                            <div className="flex flex-wrap justify-center">
-                                <div>
-                                    <img src="" alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                        {/* Image Default Set */}
+                        {(item === 0) && (
+                            <div className='col-span-10 col-start-2 flex flex-row justify-center items-center mt-24 space-x-16 mx-[300px]'>
+                                <div className={"flex flex-wrap justify-center border border-4 rounded-full " + (itemHovered === 0 ? 'border-primary_yellow' : 'border-black hover:border-primary_yellow')}
+                                    onClick={() => resetItemHover(1)}
+                                >
+                                    <div className='cursor-pointer'>
+                                        <img src={require("../../assets/default_anime.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                    </div>
+                                </div>
+
+                                <div className={"flex flex-wrap justify-center border border-4 rounded-full " + (itemHovered === 1 ? 'border-primary_yellow' : 'border-black hover:border-primary_yellow')}
+                                    onClick={() => resetItemHover(2)}
+                                >
+                                    <div className='cursor-pointer'>
+                                        <img src={require("../../assets/default_music.jpg")} alt="..." className=" rounded-full max-w-full h-auto align-middle border-none" />
+                                    </div>
+                                </div>
+
+
+                                <div className={"flex flex-wrap justify-center border border-4 rounded-full " + (itemHovered === 2 ? 'border-primary_yellow' : 'border-black hover:border-primary_yellow')}
+                                    onClick={() => resetItemHover(3)}
+                                >
+                                    <div className='cursor-pointer'>
+                                        <img src={require("../../assets/default_gym.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        )}
+
+                        {/* Image Anime Set */}
+                        {(item === 1) && (
+                            <div className='col-span-10 col-start-2 flex flex-row justify-center items-center mt-24 space-x-16 mx-[300px]'>
+
+                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
+                                    <div>
+                                        <img src={require("../../assets/anime_0.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                    </div>
+                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>One Piece</div>
+                                </div>
+
+                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
+                                    <div>
+                                        <img src={require("../../assets/anime_1.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                    </div>
+                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Attack on Titan</div>
+                                </div>
+
+                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
+                                    <div>
+                                        <img src={require("../../assets/anime_2.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                    </div>
+                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Demon Slayer</div>
                                 </div>
                             </div>
+                        )}
 
-                            <div className="flex flex-wrap justify-center">
-                                <div>
-                                    <img src="" alt="..." className=" rounded-full max-w-full h-auto align-middle border-none" />
+                        {/* Image Music Set */}
+                        {(item === 2) && (
+                            <div className='col-span-10 col-start-2 flex flex-row justify-center items-center mt-24 space-x-16 mx-[300px]'>
+
+                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
+                                    onClick={() => window.open("https://open.spotify.com/artist/5YGY8feqx7naU7z4HrwZM6?si=oHXLf14aRoalpId7U3U71w", "_blank")}
+                                >
+                                    <div>
+                                        <img src={require("../../assets/artist_0.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    </div>
+                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Miley Cyrus</div>
+                                </div>
+
+                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
+                                    onClick={() => window.open("https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH?si=CVdQ0FvpRuCc8D2G6a6gHw", "_blank")}
+                                >
+                                    <div>
+                                        <img src={require("../../assets/artist_1.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    </div>
+                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Artic Monkey</div>
+
+                                </div>
+
+                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
+                                    onClick={() => window.open("https://open.spotify.com/artist/1U1el3k54VvEUzo3ybLPlM?si=lH67jmlwTWGmj03LKKnUSA", "_blank")}
+
+                                >
+                                    <div>
+                                        <img src={require("../../assets/artist_2.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    </div>
+                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Kali Uchis</div>
+
                                 </div>
                             </div>
+                        )}
+                        {/* Image Gym Set */}
+                        {(item === 3) && (
+                            <div className='col-span-10 col-start-2 flex flex-row justify-center items-center mt-24 space-x-16 mx-[300px]'>
 
+                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
+                                    onClick={() => window.open("https://www.instagram.com/cbum/", "_blank")}
+                                >
+                                    <div>
+                                        <img src={require("../../assets/gym_0.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    </div>
+                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Cbum</div>
+                                </div>
 
-                            <div className="flex flex-wrap justify-center">
-                                <div>
-                                    <img src="" alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
+                                    onClick={() => window.open("https://www.instagram.com/noeldeyzel_bodybuilder/", "_blank")}
+
+                                >
+                                    <div>
+                                        <img src={require("../../assets/gym_1.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    </div>
+                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Noel Deyzel</div>
+                                </div>
+
+                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
+                                    onClick={() => window.open("https://www.instagram.com/jsrms_19/", "_blank")}
+                                >
+                                    <div>
+                                        <img src={require("../../assets/gym_2.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    </div>
+                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Jesus Ramos</div>
                                 </div>
                             </div>
+                        )}
 
 
-                        </div>
                     </div>
                 )}
 

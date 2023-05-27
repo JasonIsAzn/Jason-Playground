@@ -74,7 +74,7 @@ const Resume = () => {
                                 </div>
                             ) : (
                                 <div className='flex overflow-hidden whitespace-nowrap text-white text-lg cursor-pointer'>
-                                    {open ? '-' : 'Learn more about me!'}
+                                    {open ? '-' : 'the whole resume'}
                                 </div>
                             )}
                         </div>

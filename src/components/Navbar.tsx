@@ -20,7 +20,6 @@ const Navbar = () => {
 
     return (
         <div id="section-navbar" className="sticky top-0 z-0">
-
             <div className="bg-grey-yellow-5">
                 <div className="mx-auto sm:px-6 lg:px-8">
                     <div className="grid grid-cols-3 items-center justify-center h-14">
