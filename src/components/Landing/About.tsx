@@ -65,7 +65,7 @@ const About = () => {
                 {open && (
                     <div className='col-span-11 col-start-2'>
                         <div className='col-start-2 flex justify-center items-center mt-48 md:text-4xl'>
-                            <Menu as="div" className="relative inline-block text-left z-0">
+                            <Menu as="div" className="relative  inline-block text-left">
                                 <Menu.Button className="">
                                     <button
                                         className="flex items-center border-b border-black whitespace-nowrap bg-[#F5F5F5] px-6 pl-2 pb-2 pt-2.5 leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#fbfbfb] transition duration-150 ease-in-out hover:bg-neutral-100 hover:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] focus:bg-neutral-100 focus:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] focus:outline-none focus:ring-0 active:bg-neutral-200 active:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] motion-reduce:transition-none"
@@ -181,7 +181,7 @@ const About = () => {
 
                         {/* Image Default Set */}
                         {(item === 0) && (
-                            <div className='col-span-10 col-start-2 flex flex-row justify-center items-center mt-24 space-x-16 mx-[300px]'>
+                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-8 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
                                 <div className={"flex flex-wrap justify-center border border-4 rounded-full " + (itemHovered === 0 ? 'border-primary_yellow' : 'border-black hover:border-primary_yellow')}
                                     onClick={() => resetItemHover(1)}
                                 >
