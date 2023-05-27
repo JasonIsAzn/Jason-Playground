@@ -45,7 +45,7 @@ const About = () => {
                 {/* Paragraph */}
                 <div></div> {/* IT JUST WOKRS - CRIES */}
 
-                <div className="col-span-10 col-start-2 space-y-8 text-2xl lg:col-span-5 md:text-4xl lg:text-4xl">
+                <div className="col-span-10 col-start-2 space-y-8 lg:col-span-5 text-2xl md:text-4xl lg:text-4xl">
                     <p >I'm currently a student at <span className="text-[#500] font-semibold">Texas A&M</span> studying computer science. I'm working as a Teacher Assistant for engineering and computer science courses.</p>
 
                     <p> I learn by working on side projects with friends. I have a passion for software engineering, web development, and teaching. I'm currently learning app development, machine learning, and cyber security.</p>
@@ -86,10 +86,10 @@ const About = () => {
                                                     clip-rule="evenodd" />
                                             </svg>
                                         </span>
-                                        <span className={item === 0 ? "" : "hidden"}>Pick a topic</span>
-                                        <span className={item === 1 ? "" : "hidden"}>Anime</span>
-                                        <span className={item === 2 ? "" : "hidden"}>Musician</span>
-                                        <span className={item === 3 ? "" : "hidden"}>Gym</span>
+                                        <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 0 ? "" : "hidden")}>Pick a topic</span>
+                                        <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 1 ? "" : "hidden")}>Anime</span>
+                                        <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 2 ? "" : "hidden")}>Musician</span>
+                                        <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 3 ? "" : "hidden")}>Gym</span>
                                     </button>
                                 </Menu.Button>
 
@@ -173,10 +173,10 @@ const About = () => {
                                     </Menu.Items>
                                 </Transition>
                             </Menu>
-                            <span className={item === 0 ? "" : "hidden"}>about my personal interest</span>
-                            <span className={item === 1 ? "" : "hidden"}>that I'm currently watching and enjoy.</span>
-                            <span className={item === 2 ? "" : "hidden"}>that I'm obsessed with.</span>
-                            <span className={item === 3 ? "" : "hidden"}>rats that inspire me.</span>
+                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 0 ? "" : "hidden")}>about my personal interest</span>
+                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 1 ? "" : "hidden")}>that I'm currently watching and enjoy.</span>
+                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 2 ? "" : "hidden")}>that I'm obsessed with.</span>
+                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 3 ? "" : "hidden")}>rats that inspire me.</span>
                         </div>
 
                         {/* Image Default Set */}

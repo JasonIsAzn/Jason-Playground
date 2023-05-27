@@ -17,8 +17,7 @@ const Projects = () => {
 
             {/* Project Cards */}
             {!open && (
-
-                <div className="flex flex-row flex-wrap justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 ">
+                <div className="flex flex-row flex-wrap justify-center items-center space-y-4 sm:space-y-0 md:space-x-4">
                     <div className="bg-white w-[90%] sm:w-96 h-96 static bg-primary_yellow hover:border-black hover:border hover:border-dashed hover:border-2 rounded border-2"
                         onMouseEnter={() => setSwitchText1(false)}
                         onMouseLeave={() => setSwitchText1(true)}
