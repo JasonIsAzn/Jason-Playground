@@ -15,7 +15,7 @@ function classNames(...classes: any) {
 
 export default function Test() {
     return (
-        <div className="">
+        <div>
             <Menu as="div" className="relative inline-block text-left">
                 <Menu.Button className="">
                     <button

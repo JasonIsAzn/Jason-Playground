@@ -8,8 +8,15 @@ initTE({ Ripple });
 const About = () => {
     const [isHovered, setIsHovered] = useState(true);
     const [open, setOpen] = useState(false);
+    const [item, setItem] = useState(0);
 
-    console.log(open)
+
+    function personalItem(index: any) {
+        // 0 - None 1-Anime 2-Musician 3-Gym
+        setItem(index);
+        console.log('test', item);
+    }
+
 
     function classNames(...classes: any) {
         return classes.filter(Boolean).join(' ')
@@ -68,8 +75,10 @@ const About = () => {
                                                     clip-rule="evenodd" />
                                             </svg>
                                         </span>
-
-                                        Pick a topic
+                                        <span className={item === 0 ? "" : "hidden"}>Pick a topic</span>
+                                        <span className={item === 1 ? "" : "hidden"}>Anime</span>
+                                        <span className={item === 2 ? "" : "hidden"}>Musician</span>
+                                        <span className={item === 3 ? "" : "hidden"}>Gym</span>
                                     </button>
                                 </Menu.Button>
 
@@ -82,77 +91,91 @@ const About = () => {
                                     leaveFrom="transform opacity-100 scale-100"
                                     leaveTo="transform opacity-0 scale-95"
                                 >
-                                    <Menu.Items className="absolute right-0 z-10 mt-2 w-64 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                        <div className="py-1">
+                                    <Menu.Items className="absolute left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none divide-y divide-gray-100">
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                                <div
+                                                    className={classNames(
+                                                        active ? 'cursor-pointer' : 'text-gray-700',
+                                                        'flex justify-center items-center text-3xl px-4 py-2 ' + (item === 1 ? 'hidden' : '')
+                                                    )}
+                                                    onClick={() => personalItem(1)}
+                                                >
+                                                    Anime
+                                                </div>
+                                            )}
+                                        </Menu.Item>
 
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <div
-                                                        className={classNames(
-                                                            active ? 'cursor-pointer bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                            'flex justify-center items-center text-3xl px-4 py-2'
-                                                        )}
-                                                        onClick={() => console.log('Anime')}
-                                                    >
-                                                        Anime
-                                                    </div>
-                                                )}
-                                            </Menu.Item>
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                                <div
+                                                    className={classNames(
+                                                        active ? 'cursor-pointer ' : 'text-gray-700',
+                                                        'flex justify-center items-center text-3xl px-4 py-2 ' + (item === 2 ? 'hidden' : '')
+                                                    )}
+                                                    onClick={() => personalItem(2)}
 
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <div
-                                                        className={classNames(
-                                                            active ? 'cursor-pointer bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                            'flex justify-center items-center text-3xl px-4 py-2'
-                                                        )}
-                                                        onClick={() => console.log('Artist')}
+                                                >
+                                                    Musician
+                                                </div>
+                                            )}
+                                        </Menu.Item>
 
-                                                    >
-                                                        Artist
-                                                    </div>
-                                                )}
-                                            </Menu.Item>
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                                <div
+                                                    className={classNames(
+                                                        active ? 'cursor-pointer' : 'text-gray-700',
+                                                        'flex justify-center items-center text-3xl px-4 py-2 ' + (item === 3 ? 'hidden' : '')
+                                                    )}
+                                                    onClick={() => personalItem(3)}
+                                                >
+                                                    Gym
+                                                </div>
+                                            )}
+                                        </Menu.Item>
 
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <div
-                                                        className={classNames(
-                                                            active ? 'cursor-pointer bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                            'flex justify-center items-center text-3xl px-4 py-2'
-                                                        )}
-                                                        onClick={() => console.log('Gym')}
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                                <div
+                                                    className={classNames(
+                                                        active ? 'cursor-pointer' : 'text-gray-700',
+                                                        'flex justify-center items-center text-3xl px-4 py-2 ' + (item === 0 ? 'hidden' : '')
+                                                    )}
+                                                    onClick={() => personalItem(0)}
+                                                >
+                                                    Topics
+                                                </div>
+                                            )}
+                                        </Menu.Item>
 
-                                                    >
-                                                        Gym
-                                                    </div>
-                                                )}
-                                            </Menu.Item>
 
-                                        </div>
                                     </Menu.Items>
                                 </Transition>
                             </Menu>
-                            <div> about my personal interest</div>
+                            <span className={item === 0 ? "" : "hidden"}>about my personal interest</span>
+                            <span className={item === 1 ? "" : "hidden"}>that I'm currently watching and enjoy.</span>
+                            <span className={item === 2 ? "" : "hidden"}>that I'm obsessed with.</span>
+                            <span className={item === 3 ? "" : "hidden"}>rats I look up to.</span>
                         </div>
                         <div className='col-span-10 col-start-2 flex flex-row justify-center items-center mt-24 space-x-16 mx-[300px]'>
 
                             <div className="flex flex-wrap justify-center">
-                                <div className="">
-                                    <img src="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/team-2-800x800.jpg" alt="..." className="shadow rounded-full max-w-full h-auto align-middle border-none" />
+                                <div>
+                                    <img src="" alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
                                 </div>
                             </div>
 
                             <div className="flex flex-wrap justify-center">
-                                <div className="">
-                                    <img src="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/team-2-800x800.jpg" alt="..." className="shadow rounded-full max-w-full h-auto align-middle border-none" />
+                                <div>
+                                    <img src="" alt="..." className=" rounded-full max-w-full h-auto align-middle border-none" />
                                 </div>
                             </div>
 
 
                             <div className="flex flex-wrap justify-center">
-                                <div className="">
-                                    <img src="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/team-2-800x800.jpg" alt="..." className="shadow rounded-full max-w-full h-auto align-middle border-none" />
+                                <div>
+                                    <img src="" alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
                                 </div>
                             </div>
 
