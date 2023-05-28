@@ -213,34 +213,34 @@ const About = () => {
 
                         {/* Image Anime Set */}
                         {(item === 1) && (
-                            <div className='col-span-10 col-start-2 flex flex-row justify-center items-center mt-24 space-x-16 mx-[300px]'>
+                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-20 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
                                     <div>
                                         <img src={require("../../assets/anime_0.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
                                     </div>
-                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>One Piece</div>
+                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>One Piece</div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
                                     <div>
                                         <img src={require("../../assets/anime_1.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
                                     </div>
-                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Attack on Titan</div>
+                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Attack on Titan</div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
                                     <div>
                                         <img src={require("../../assets/anime_2.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
                                     </div>
-                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Demon Slayer</div>
+                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Demon Slayer</div>
                                 </div>
                             </div>
                         )}
 
                         {/* Image Music Set */}
                         {(item === 2) && (
-                            <div className='col-span-10 col-start-2 flex flex-row justify-center items-center mt-24 space-x-16 mx-[300px]'>
+                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-20 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
                                     onClick={() => window.open("https://open.spotify.com/artist/5YGY8feqx7naU7z4HrwZM6?si=oHXLf14aRoalpId7U3U71w", "_blank")}
@@ -248,7 +248,7 @@ const About = () => {
                                     <div>
                                         <img src={require("../../assets/artist_0.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
                                     </div>
-                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Miley Cyrus</div>
+                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Miley Cyrus</div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
@@ -257,7 +257,7 @@ const About = () => {
                                     <div>
                                         <img src={require("../../assets/artist_1.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
                                     </div>
-                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Artic Monkey</div>
+                                    <div className='font-bold text-lg sm:-mt-6 cursor-pointer'>Artic Monkey</div>
 
                                 </div>
 
@@ -268,14 +268,14 @@ const About = () => {
                                     <div>
                                         <img src={require("../../assets/artist_2.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
                                     </div>
-                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Kali Uchis</div>
+                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Kali Uchis</div>
 
                                 </div>
                             </div>
                         )}
                         {/* Image Gym Set */}
                         {(item === 3) && (
-                            <div className='col-span-10 col-start-2 flex flex-row justify-center items-center mt-24 space-x-16 mx-[300px]'>
+                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-20 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
                                     onClick={() => window.open("https://www.instagram.com/cbum/", "_blank")}
@@ -283,7 +283,7 @@ const About = () => {
                                     <div>
                                         <img src={require("../../assets/gym_0.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
                                     </div>
-                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Cbum</div>
+                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Cbum</div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
@@ -293,7 +293,7 @@ const About = () => {
                                     <div>
                                         <img src={require("../../assets/gym_1.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
                                     </div>
-                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Noel Deyzel</div>
+                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Noel Deyzel</div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
@@ -302,7 +302,7 @@ const About = () => {
                                     <div>
                                         <img src={require("../../assets/gym_2.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
                                     </div>
-                                    <div className='font-bold text-lg -mt-6 cursor-pointer'>Jesus Ramos</div>
+                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Jesus Ramos</div>
                                 </div>
                             </div>
                         )}

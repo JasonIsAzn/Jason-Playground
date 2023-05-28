@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const Contact = () => {
     const [isHovered, setIsHovered] = useState(true);
@@ -13,7 +15,9 @@ const Contact = () => {
                 {!open && (
                     < div className="col-span-12 flex flex-col sm:flex-row sm:flex-wrap justify-center items-center space-x-4 pt-48 text-3xl font-semibold m-8">
                         <div className="hidden sm:block inline-block h-[35px] min-h-[1em] w-0.5 self-stretch bg-black opacity-50"></div>
-                        <a className="mb-6" href="mailto:jasonisazn@tamu.edu">Email</a>
+                        <a className="mb-6" href="mailto:jasonisazn@tamu.edu">
+                            <FontAwesomeIcon icon={icon({name: 'coffee', style: 'regular'})} />
+                        </a>
                         <div className="hidden sm:block inline-block h-[35px] min-h-[1em] w-0.5 self-stretch bg-black opacity-50"></div>
                         <a className="mb-6" href="https://www.linkedin.com/in/vjasonle/">Linkedln</a>
                         <div className="hidden sm:block inline-block h-[35px] min-h-[1em] w-0.5 self-stretch bg-black opacity-50"></div>
