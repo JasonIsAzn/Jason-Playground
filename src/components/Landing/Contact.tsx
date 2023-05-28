@@ -21,16 +21,50 @@ const Contact = () => {
                         <a href="mailto:jasonisazn@tamu.edu" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faEnvelope} /></a>
                         <a href="https://www.linkedin.com/in/vjasonle/" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} /></a>
                         <a href="https://github.com/JasonIsAzn" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
-                        <a href="https://www.instagram.com/thereal.jle/" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faInstagram} />
-                        </a>
+                        <a href="https://www.instagram.com/thereal.jle/" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faInstagram} /></a>
                     </div>
                 )}
 
                 {/* Expanded Section */}
                 {open && (
-                    <div className='col-span-12 flex flex-col sm:flex-row sm:flex-wrap justify-center items-center space-x-4 text-3xl font-semibold m-8'>
-                        <div className='flex col-span-5 col-start-2 mt-24 md:text-4xl lg:text-4xl'>Test-Contact</div>
+                    <div className='col-start-3 col-span-2 my-8'>
+                        <div className='my-12 md:text-4xl lg:text-4xl'>
+                            <div className='flex flex-col'>
+                                <a href="mailto:jasonisazn@tamu.edu" rel="noreferrer" target="_blank"
+                                    className='flex space-x-4'
+                                >
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                    <span>Email</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/vjasonle/" rel="noreferrer" target="_blank"
+                                    className='flex space-x-4'
+                                >
+                                    <FontAwesomeIcon icon={faLinkedinIn} />
+                                    <span>Linkedin</span>
+                                </a>
+                                <a href="https://github.com/JasonIsAzn" rel="noreferrer" target="_blank"
+                                    className='flex space-x-4'
+                                >
+                                    <FontAwesomeIcon icon={faGithub} />
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://www.instagram.com/thereal.jle/" rel="noreferrer" target="_blank"
+                                    className='flex space-x-4'
+                                >
+                                    <FontAwesomeIcon icon={faInstagram} />
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                )}
+                {open && (
+                    <div className='col-span-7 border-l border-black flex items-center justify-center'>
+                        <div className='my-12 md:text-4xl lg:text-4xl'>
+                            Test-Contact
+                        </div>
+                    </div>
+
                 )}
 
                 {/* Button */}
