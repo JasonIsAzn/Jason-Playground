@@ -43,12 +43,9 @@ const Resume = () => {
     function collapseSection(isOpen: boolean) {
         setOpen(!open)
         if (open) {
-
             expandRef!.current!.scrollIntoView();
         }
-
     }
-
 
     return (
         <div id="section-resume" className='p-4 pt-24 pr-16 h-full pb-24 bg-[#F5F5F5]'
@@ -59,7 +56,6 @@ const Resume = () => {
                 >
                     {/* Title */}
                     <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold pb-8'
-
                     >
                         My Resume
                     </h1>

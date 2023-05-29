@@ -9,6 +9,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 const Contact = () => {
     const [isHovered, setIsHovered] = useState(true);
     const [open, setOpen] = useState(false);
+    const [over, setOver] = useState<number | null>(null);
 
     return (
         <div id="section-contact" className='flex flex-col py-8 bg-[#F5F5F1]'>
@@ -18,34 +19,69 @@ const Contact = () => {
                 {/* Contact Methods */}
                 {!open && (
                     < div className="col-span-12 flex flex-col sm:flex-row sm:flex-wrap justify-center items-center space-x-10 my-48 text-3xl font-semibold m-8">
-                        <a
-                            href="mailto:jasonisazn@tamu.edu"
-                            rel="noreferrer"
-                            target="_blank"
+                        <button
+                            className='flex hover:lg:text-4xl'
+                            onMouseOver={() => setOver(0)}
+                            onMouseLeave={() => setOver(null)}
                         >
-                            <FontAwesomeIcon icon={faEnvelope} />
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/vjasonle/"
-                            rel="noreferrer"
-                            target="_blank"
+                            <a
+                                href="mailto:jasonisazn@tamu.edu"
+                                rel="noreferrer"
+                                target="_blank"
+                                className='space-x-4'>
+                                <FontAwesomeIcon size={over === 0 ? "lg" : "1x"}
+                                    icon={faEnvelope} />
+
+
+                            </a>
+                        </button>
+
+
+                        <button
+                            className='flex hover:lg:text-4xl'
+                            onMouseOver={() => setOver(1)}
+                            onMouseLeave={() => setOver(null)}
                         >
-                            <FontAwesomeIcon icon={faLinkedinIn} />
-                        </a>
-                        <a
-                            href="https://github.com/JasonIsAzn"
-                            rel="noreferrer"
-                            target="_blank"
+                            <a
+                                href="https://www.linkedin.com/in/vjasonle/"
+                                rel="noreferrer"
+                                target="_blank"
+                                className='space-x-4'>
+                                <FontAwesomeIcon size={over === 1 ? "lg" : "1x"}
+                                    icon={faLinkedinIn} />
+                            </a>
+                        </button>
+                        <button
+                            className='flex hover:lg:text-4xl'
+                            onMouseOver={() => setOver(2)}
+                            onMouseLeave={() => setOver(null)}
                         >
-                            <FontAwesomeIcon icon={faGithub} />
-                        </a>
-                        <a
-                            href="https://www.instagram.com/thereal.jle/"
-                            rel="noreferrer"
-                            target="_blank"
+                            <a
+                                href="https://github.com/JasonIsAzn"
+                                rel="noreferrer"
+                                target="_blank"
+                                className='space-x-4'>
+                                <FontAwesomeIcon size={over === 2 ? "lg" : "1x"}
+                                    icon={faGithub} />
+                            </a>
+                        </button>
+
+                        <button
+                            className='flex hover:lg:text-4xl'
+                            onMouseOver={() => setOver(3)}
+                            onMouseLeave={() => setOver(null)}
                         >
-                            <FontAwesomeIcon icon={faInstagram} />
-                        </a>
+                            <a
+                                href="https://www.instagram.com/thereal.jle/"
+                                rel="noreferrer"
+                                target="_blank"
+                                className='space-x-4'>
+                                <FontAwesomeIcon size={over === 3 ? "lg" : "1x"}
+                                    icon={faInstagram} />
+
+
+                            </a>
+                        </button>
                     </div>
                 )}
 
@@ -54,42 +90,71 @@ const Contact = () => {
                     <div className='col-start-3 sm:col-start-4 col-span-2 my-8 mb-0 sm:mb-8'>
                         <div className='my-12 text-2xl sm:text-xl md:text-2xl lg:text-3xl'>
                             <div className='flex flex-col space-y-4'>
-                                <a
-                                    href="mailto:jasonisazn@tamu.edu"
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    className='flex space-x-4'
+                                <button
+                                    className='flex hover:lg:text-4xl'
+                                    onMouseOver={() => setOver(0)}
+                                    onMouseLeave={() => setOver(null)}
                                 >
-                                    <FontAwesomeIcon icon={faEnvelope} />
-                                    <span className='text'>Email</span>
-                                </a>
-                                <a
-                                    href="https://www.linkedin.com/in/vjasonle/"
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    className='flex space-x-4'
+                                    <a
+                                        href="mailto:jasonisazn@tamu.edu"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className='space-x-4'>
+                                        <FontAwesomeIcon size={over === 0 ? "lg" : "1x"}
+                                            icon={faEnvelope} />
+                                        <span className='text'>Email</span>
+
+                                    </a>
+                                </button>
+                                <button
+                                    className='flex hover:lg:text-4xl'
+                                    onMouseOver={() => setOver(1)}
+                                    onMouseLeave={() => setOver(null)}
                                 >
-                                    <FontAwesomeIcon icon={faLinkedinIn} />
-                                    <span>Linkedin</span>
-                                </a>
-                                <a
-                                    href="https://github.com/JasonIsAzn"
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    className='flex space-x-4'
+                                    <a
+                                        href="https://www.linkedin.com/in/vjasonle/"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className='space-x-4'>
+                                        <FontAwesomeIcon size={over === 1 ? "lg" : "1x"}
+                                            icon={faLinkedinIn} />
+                                        <span className='text'>Linkedin</span>
+
+                                    </a>
+                                </button>
+                                <button
+                                    className='flex hover:lg:text-4xl'
+                                    onMouseOver={() => setOver(2)}
+                                    onMouseLeave={() => setOver(null)}
                                 >
-                                    <FontAwesomeIcon icon={faGithub} />
-                                    <span>GitHub</span>
-                                </a>
-                                <a
-                                    href="https://www.instagram.com/thereal.jle/"
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    className='flex space-x-4'
+                                    <a
+                                        href="https://github.com/JasonIsAzn"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className='space-x-4'>
+                                        <FontAwesomeIcon size={over === 2 ? "lg" : "1x"}
+                                            icon={faGithub} />
+                                        <span className='text'>GitHub</span>
+
+                                    </a>
+                                </button>
+
+                                <button
+                                    className='flex hover:lg:text-4xl'
+                                    onMouseOver={() => setOver(3)}
+                                    onMouseLeave={() => setOver(null)}
                                 >
-                                    <FontAwesomeIcon icon={faInstagram} />
-                                    <span>Instagram</span>
-                                </a>
+                                    <a
+                                        href="https://www.instagram.com/thereal.jle/"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className='space-x-4'>
+                                        <FontAwesomeIcon size={over === 3 ? "lg" : "1x"}
+                                            icon={faInstagram} />
+                                        <span className='text'>Instagram</span>
+
+                                    </a>
+                                </button>
                             </div>
                         </div>
                     </div>

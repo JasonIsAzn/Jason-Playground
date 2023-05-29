@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
-export default function Test() {
+export default function App() {
+    const [over, setOver] = useState(false);
     return (
-        <div>
-
+        <div className="App">
+            <button
+                onMouseOver={() => setOver(true)}
+                onMouseLeave={() => setOver(false)}
+            >
+                <FontAwesomeIcon
+                    icon={faEnvelope}
+                    style={over ? { color: "red" } : {}}
+                />
+                <span>Dataset Upload</span>
+            </button>
         </div>
-    )
+    );
 }
