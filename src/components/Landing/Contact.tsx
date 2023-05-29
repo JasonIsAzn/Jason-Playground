@@ -63,7 +63,9 @@ const Contact = () => {
                         <div className="flex items-center justify-start border-t sm:border-t-0 border-black pt-14">
                             <div className="mx-6 sm:mx-0 w-full max-w-lg">
                                 <h1 className="text-4xl font-medium">Email Me </h1>
-                                <form action="javascript:void(0);" className="mt-10">
+                                <form
+                                    onSubmit={(e) => e.preventDefault()}
+                                    className="mt-10">
                                     <div className="grid gap-6 sm:grid-cols-2">
                                         <div className="relative z-0">
                                             <input type="text" name="name" className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-primary_yellow-dark focus:outline-none focus:ring-0" placeholder=" " />
