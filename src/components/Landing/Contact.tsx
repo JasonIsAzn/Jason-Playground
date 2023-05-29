@@ -18,10 +18,34 @@ const Contact = () => {
                 {/* Contact Methods */}
                 {!open && (
                     < div className="col-span-12 flex flex-col sm:flex-row sm:flex-wrap justify-center items-center space-x-10 my-48 text-3xl font-semibold m-8">
-                        <a href="mailto:jasonisazn@tamu.edu" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faEnvelope} /></a>
-                        <a href="https://www.linkedin.com/in/vjasonle/" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-                        <a href="https://github.com/JasonIsAzn" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
-                        <a href="https://www.instagram.com/thereal.jle/" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faInstagram} /></a>
+                        <a
+                            href="mailto:jasonisazn@tamu.edu"
+                            rel="noreferrer"
+                            target="_blank"
+                        >
+                            <FontAwesomeIcon icon={faEnvelope} />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/vjasonle/"
+                            rel="noreferrer"
+                            target="_blank"
+                        >
+                            <FontAwesomeIcon icon={faLinkedinIn} />
+                        </a>
+                        <a
+                            href="https://github.com/JasonIsAzn"
+                            rel="noreferrer"
+                            target="_blank"
+                        >
+                            <FontAwesomeIcon icon={faGithub} />
+                        </a>
+                        <a
+                            href="https://www.instagram.com/thereal.jle/"
+                            rel="noreferrer"
+                            target="_blank"
+                        >
+                            <FontAwesomeIcon icon={faInstagram} />
+                        </a>
                     </div>
                 )}
 
@@ -30,25 +54,37 @@ const Contact = () => {
                     <div className='col-start-3 sm:col-start-4 col-span-2 my-8 mb-0 sm:mb-8'>
                         <div className='my-12 text-2xl sm:text-xl md:text-2xl lg:text-3xl'>
                             <div className='flex flex-col space-y-4'>
-                                <a href="mailto:jasonisazn@tamu.edu" rel="noreferrer" target="_blank"
+                                <a
+                                    href="mailto:jasonisazn@tamu.edu"
+                                    rel="noreferrer"
+                                    target="_blank"
                                     className='flex space-x-4'
                                 >
                                     <FontAwesomeIcon icon={faEnvelope} />
                                     <span className='text'>Email</span>
                                 </a>
-                                <a href="https://www.linkedin.com/in/vjasonle/" rel="noreferrer" target="_blank"
+                                <a
+                                    href="https://www.linkedin.com/in/vjasonle/"
+                                    rel="noreferrer"
+                                    target="_blank"
                                     className='flex space-x-4'
                                 >
                                     <FontAwesomeIcon icon={faLinkedinIn} />
                                     <span>Linkedin</span>
                                 </a>
-                                <a href="https://github.com/JasonIsAzn" rel="noreferrer" target="_blank"
+                                <a
+                                    href="https://github.com/JasonIsAzn"
+                                    rel="noreferrer"
+                                    target="_blank"
                                     className='flex space-x-4'
                                 >
                                     <FontAwesomeIcon icon={faGithub} />
                                     <span>GitHub</span>
                                 </a>
-                                <a href="https://www.instagram.com/thereal.jle/" rel="noreferrer" target="_blank"
+                                <a
+                                    href="https://www.instagram.com/thereal.jle/"
+                                    rel="noreferrer"
+                                    target="_blank"
                                     className='flex space-x-4'
                                 >
                                     <FontAwesomeIcon icon={faInstagram} />
