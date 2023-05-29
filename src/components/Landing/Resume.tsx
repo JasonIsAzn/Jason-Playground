@@ -42,18 +42,24 @@ const Resume = () => {
 
     function collapseSection(isOpen: boolean) {
         setOpen(!open)
-        if (!open) {
+        if (open) {
+
             expandRef!.current!.scrollIntoView();
         }
+
     }
 
 
     return (
-        <div id="section-resume" className='p-4 pt-24 pr-16 h-full pb-24 bg-[#F5F5F5]'>
+        <div id="section-resume" className='p-4 pt-24 pr-16 h-full pb-24 bg-[#F5F5F5]'
+            ref={expandRef}
+        >
             <div className="grid grid-cols-12">
-                <div className={"col-start-2 lg:my-12 lg:mb-24 " + (open ? 'col-span-12' : 'col-span-5')}>
+                <div className={"col-start-2 lg:my-12 lg:mb-24 " + (open ? 'col-span-12' : 'col-span-5')}
+                >
                     {/* Title */}
                     <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold pb-8'
+
                     >
                         My Resume
                     </h1>
@@ -182,7 +188,7 @@ const Resume = () => {
                         <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64')}
                             onMouseEnter={() => setIsHovered(false)}
                             onMouseLeave={() => setIsHovered(true)}
-                            onClick={() => setOpen(!open)}
+                            onClick={() => collapseSection(open)}
                         >
                             {isHovered ? (
                                 <div className='text-white font-semibold'>
@@ -218,7 +224,6 @@ const Resume = () => {
                     </div>
 
                 )}
-                <div ref={expandRef}></div>
 
 
             </div>
