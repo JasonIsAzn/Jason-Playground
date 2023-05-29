@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { Ripple, initTE } from "tw-elements";
@@ -11,12 +11,17 @@ const About = () => {
     const [item, setItem] = useState(0); // item chosen in expanded section
     const [itemHovered, setItemHovered] = useState<number | null>(null); // item hover effect
 
+    var collapseRef = useRef<null | HTMLDivElement>(null);
+    var expandRef = useRef<null | HTMLDivElement>(null);
 
-    console.log("test", itemHovered)
-
-    useEffect(() => {
-        setItemHovered(null);
-    }, [item])
+    function collapseSection(isOpen: boolean) {
+        setOpen(!open)
+        if (!open) {
+            expandRef!.current!.scrollIntoView();
+        } else {
+            collapseRef!.current!.scrollIntoView();
+        }
+    }
 
     function delay(ms: number) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -36,7 +41,8 @@ const About = () => {
         <div id="section-about" className='p-2 h-full pb-24 bg-[#F5F5F5]'>
             <div className="grid grid-cols-12">
                 {/* Title */}
-                <div className="col-span-12 col-start-2 space-y-2 my-12 mb-24 text-5xl md:text-6xl lg:text-8xl">
+                <div className="col-span-12 col-start-2 space-y-2 my-12 mb-24 text-5xl md:text-6xl lg:text-8xl"
+                    ref={collapseRef}>
                     <p className='font-bold '>Howdy,</p>
                     <p className='font-semibold'> It's nice to meet you. </p>
                 </div>
@@ -51,7 +57,6 @@ const About = () => {
                     <p> I learn by working on side projects with friends. I have a passion for software engineering, web development, and teaching. I'm currently learning app development, machine learning, and cyber security.</p>
 
                     <p> I enjoy listening to music, watching anime, and working out </p>
-
                 </div>
 
                 {/* Profile Image */}
@@ -60,21 +65,24 @@ const About = () => {
                         <img src={require("../../assets/profile.jpg")} alt="profile" className="rounded-full" />
                     </div>
                 </div>
-
+                <div ref={expandRef}></div>
                 {/* Expanded Section */}
                 {open && (
                     <div className='col-span-11 col-start-2'>
                         <div className='col-start-2 flex justify-center items-center mt-48 md:text-4xl'>
                             <Menu as="div" className="relative  inline-block text-left">
-                                <Menu.Button className="">
+                                <Menu.Button className=""
+                                >
                                     <button
                                         className="flex items-center border-b border-black whitespace-nowrap bg-[#F5F5F5] px-6 pl-2 pb-2 pt-2.5 leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#fbfbfb] transition duration-150 ease-in-out hover:bg-neutral-100 hover:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] focus:bg-neutral-100 focus:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] focus:outline-none focus:ring-0 active:bg-neutral-200 active:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] motion-reduce:transition-none"
                                         type="button"
                                         aria-expanded="false"
                                         data-te-ripple-init
                                         onClick={() => setItemHovered(null)}
+
                                     >
-                                        <span className="mr-6 w-2 transform -scale-y-100">
+                                        <span className="mr-6 w-2 transform -scale-y-100"
+                                        >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 20 20"
@@ -86,14 +94,14 @@ const About = () => {
                                                     clip-rule="evenodd" />
                                             </svg>
                                         </span>
-                                        <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 0 ? "" : "hidden")}>Pick a topic</span>
-                                        <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 1 ? "" : "hidden")}>Anime</span>
-                                        <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 2 ? "" : "hidden")}>Musician</span>
-                                        <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 3 ? "" : "hidden")}>Gym</span>
+                                        <div>
+                                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 0 ? "" : "hidden")}>Pick a topic</span>
+                                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 1 ? "" : "hidden")}>Anime</span>
+                                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 2 ? "" : "hidden")}>Musician</span>
+                                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 3 ? "" : "hidden")}>Gym</span>
+                                        </div>
                                     </button>
                                 </Menu.Button>
-
-
 
                                 <Transition
                                     as={Fragment}
@@ -168,7 +176,6 @@ const About = () => {
                                                 </div>
                                             )}
                                         </Menu.Item>
-
 
                                     </Menu.Items>
                                 </Transition>
@@ -312,11 +319,14 @@ const About = () => {
                 )}
 
                 {/* Button */}
-                <div className={"col-span-2 flex justify-center items-center mt-16 cursor-pointer " + (open ? 'col-start-11' : 'col-start-9')}>
+                <div
+                    className={"col-span-2 flex justify-center items-center mt-16 cursor-pointer " + (open ? 'col-start-11' : 'col-start-9')}
+                    id='expand-about-btn'
+                >
                     <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64')}
                         onMouseEnter={() => setIsHovered(false)}
                         onMouseLeave={() => setIsHovered(true)}
-                        onClick={() => setOpen(!open)}
+                        onClick={() => collapseSection(open)}
                     >
                         {isHovered ? (
                             <div className='text-white font-semibold'>
