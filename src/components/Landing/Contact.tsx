@@ -27,14 +27,14 @@ const Contact = () => {
 
                 {/* Expanded Section */}
                 {open && (
-                    <div className='col-start-3 col-span-2 my-8'>
-                        <div className='my-12 md:text-4xl lg:text-4xl'>
-                            <div className='flex flex-col'>
+                    <div className='col-start-3 sm:col-start-4 col-span-2 my-8 mb-0 sm:mb-8'>
+                        <div className='my-12 text-2xl sm:text-xl md:text-2xl lg:text-3xl'>
+                            <div className='flex flex-col space-y-4'>
                                 <a href="mailto:jasonisazn@tamu.edu" rel="noreferrer" target="_blank"
                                     className='flex space-x-4'
                                 >
                                     <FontAwesomeIcon icon={faEnvelope} />
-                                    <span>Email</span>
+                                    <span className='text'>Email</span>
                                 </a>
                                 <a href="https://www.linkedin.com/in/vjasonle/" rel="noreferrer" target="_blank"
                                     className='flex space-x-4'
@@ -59,10 +59,34 @@ const Contact = () => {
                     </div>
                 )}
                 {open && (
-                    <div className='col-span-7 border-l border-black flex items-center justify-center'>
-                        <div className='my-12 md:text-4xl lg:text-4xl'>
-                            Test-Contact
+                    <div className='col-span-12 sm:col-span-6 sm:border-l border-black flex items-center justify-center sm:pl-12 md:justify-start md:pl-24 lg:pl-48 ml-6 md:ml-0'>
+                        <div className="flex items-center justify-start border-t sm:border-t-0 border-black pt-14">
+                            <div className="mx-6 sm:mx-0 w-full max-w-lg">
+                                <h1 className="text-4xl font-medium">Email Me </h1>
+                                <form action="javascript:void(0);" className="mt-10">
+                                    <div className="grid gap-6 sm:grid-cols-2">
+                                        <div className="relative z-0">
+                                            <input type="text" name="name" className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-primary_yellow-dark focus:outline-none focus:ring-0" placeholder=" " />
+                                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-primary_yellow-dark peer-focus:dark:text-primary_yellow-dark">Your name</label>
+                                        </div>
+                                        <div className="relative z-0">
+                                            <input type="text" name="email" className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-primary_yellow-dark focus:outline-none focus:ring-0" placeholder=" " />
+                                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-primary_yellow-dark peer-focus:dark:text-primary_yellow-dark">Your email</label>
+                                        </div>
+                                        <div className="relative z-0 col-span-2">
+                                            <textarea name="message" rows={5} className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-primary_yellow-dark focus:outline-none focus:ring-0" placeholder=" "></textarea>
+                                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-primary_yellow-dark peer-focus:dark:text-primary_yellow-dark">Your message</label>
+                                        </div>
+                                    </div>
+                                    <button
+                                        className="mt-5 rounded-md bg-black px-10 py-2 text-white"
+                                        onClick={() => alert("This feature is currently under development. Please reach out directly via my other contact methods.")}
+                                    >
+                                        Send Message</button>
+                                </form>
+                            </div>
                         </div>
+
                     </div>
 
                 )}

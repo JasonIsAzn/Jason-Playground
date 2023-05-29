@@ -13,6 +13,7 @@ module.exports = {
         },
         primary_yellow: {
           DEFAULT: "#ECE75F",
+          dark: "#8B8000",
         },
       },
       scale: {
