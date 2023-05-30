@@ -176,14 +176,14 @@ const About = () => {
                                                 </div>
                                             )}
                                         </Menu.Item>
-
                                     </Menu.Items>
                                 </Transition>
+
+                                <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 0 ? "" : "hidden")}>about my personal interest</span>
+                                <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 1 ? "" : "hidden")}>that I'm currently watching and enjoy.</span>
+                                <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 2 ? "" : "hidden")}>that I'm obsessed with.</span>
+                                <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 3 ? "" : "hidden")}>rats that inspire me.</span>
                             </Menu>
-                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 0 ? "" : "hidden")}>about my personal interest</span>
-                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 1 ? "" : "hidden")}>that I'm currently watching and enjoy.</span>
-                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 2 ? "" : "hidden")}>that I'm obsessed with.</span>
-                            <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 3 ? "" : "hidden")}>rats that inspire me.</span>
                         </div>
 
                         {/* Image Default Set */}

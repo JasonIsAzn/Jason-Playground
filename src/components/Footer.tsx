@@ -8,7 +8,6 @@ function Footer() {
                 rel="noreferrer"
                 target="_blank">
                 <span className='text underline '>old portfolio website</span>
-
             </a>
         </div>
     )

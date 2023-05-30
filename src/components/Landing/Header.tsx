@@ -6,7 +6,7 @@ import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
 import randomLines from "../../assets/lines.svg"
 import sunRise from "../../assets/sunrise.svg"
 import smallDeer from "../../assets/smalldeer.svg"
-import tree from "../..assets/tree.svg"
+// import tree from "../..assets/tree.svg"
 
 import { Typewriter } from 'react-simple-typewriter'
 
@@ -22,13 +22,11 @@ const Header = () => {
 
 
     const particlesInit = useCallback(async (engine: Engine): Promise<void> => {
-        console.log(engine);
         await loadFull(engine);
         await loadPolygonMaskPlugin(engine);
     }, []);
 
     const particlesLoaded = useCallback(async (container: Container | undefined) => {
-        console.log(container);
     }, []);
 
     let options0 = {

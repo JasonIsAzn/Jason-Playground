@@ -15,7 +15,6 @@ const Navbar = () => {
 
     const handleMenu = () => {
         setOpen((prev) => !prev);
-        console.log(open);
     };
 
     return (
@@ -29,7 +28,7 @@ const Navbar = () => {
                             </a>
                         </div>
 
-                        <div className="flex items-baseline justify-center md:text-3xl text-white font-semibold font-mono cursor-pointer"
+                        <div className="flex items-baseline justify-center text-lg sm:text-xl md:text-3xl text-white font-semibold font-mono cursor-pointer"
                         >
                             <HashLink smooth to="/#">
                                 JASON LE
@@ -49,6 +48,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Nav Mobile Menu */}
+
                         <div className="mr-1 flex justify-end md:hidden">
                             <button
                                 type="button"
@@ -56,13 +56,14 @@ const Navbar = () => {
                                 className="inline-flex text-white i tems-center p-2 rounded-md text-grey-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                             >
                                 <span className='sr-only'>Open Main Menu</span>
-                                {open === true ? <FaTimes /> : <FaBars />}
+                                <span className='mt-2'>{open === true ? <FaTimes /> : <FaBars />}</span>
 
                             </button>
                         </div>
-
                         {open ? (
-                            <div className='col-span-3 md:hidden'>
+                            <div
+                                className='col-span-3 md:hidden'
+                            >
                                 <div className="mt-2 flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-grey-yellow-5 w-full"
                                     onClick={() => setOpen(false)}
                                 >
@@ -73,7 +74,6 @@ const Navbar = () => {
                                     ))}
                                 </div>
                             </div>
-
                         ) : null}
 
                     </div>
