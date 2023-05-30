@@ -68,7 +68,11 @@ const Resume = () => {
                             <div>
                                 <div className='flex underline text-2xl sm:text-4xl mb-4'>Education</div>
                                 <ul className='flex flex-col text-lg sm:text-xl list-disc ml-6'>
-                                    <li>Texas A&M University (TAMU), College Station, Texas </li>
+                                    <li >
+                                        <div className='flex flex-row'>
+                                            Texas A&M University (TAMU) <span><img className="ml-2 h-8 w-8" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span>, College Station, Texas
+                                        </div>
+                                    </li>
                                     <li>Double Major: Bachelor of Science in Computer Science, Mathematics — May 2024</li>
                                     <li>Major GPR: 3.515</li>
                                     <li>Pursuing Minor in Cybersecurity</li>
@@ -78,13 +82,39 @@ const Resume = () => {
                             {/* Technical Skills */}
                             <div className='grid grid-cols-6'>
                                 <div className='col-span-6 flex underline text-2xl sm:text-4xl mb-4 '>Technical Skills</div>
-                                <div className='col-span-4 grid gap-x-6 gap-y-2 sm:grid-cols-3 sm:gap-y-4 text-lg sm:text-xl ml-2 break-normal'>
+                                <div className='col-span-4 grid gap-x-6 gap-y-2 sm:grid-cols-3 sm:gap-y-1 text-lg sm:text-xl ml-2 break-normal'>
+                                    {/* Row 1 */}
                                     <li>C++</li>
                                     <li>Python</li>
                                     <li>GitHub</li>
-                                    <li>Java/ TypeScript</li>
+                                    {/* Row 1 - Logo */}
+                                    <div className='hidden sm:block sm:ml-6 flex w-full mb-2'>
+                                        <img className="h-8 w-8" alt="python" src={require("../../assets/c++_logo.png")}></img>
+                                    </div>
+                                    <div className='hidden sm:block sm:ml-6 flex w-full mb-2'>
+                                        <img className="h-8 w-8" alt="python" src={require("../../assets/python-logo.png")}></img>
+                                    </div>
+                                    <div className='hidden sm:block flex w-full mb-2 sm:ml-6'>
+                                        <img className="h-8 w-8" alt="github" src={require("../../assets/github-logo.png")}></img>
+                                    </div>
+
+                                    {/* Row 2 */}
+                                    <li>TypeScript</li>
+                                    <li>JavaScript</li>
                                     <li>React</li>
-                                    <li>SQL</li>
+                                    {/* Row 2 - Logo */}
+                                    <div className='hidden sm:block flex w-full mb-2 sm:ml-6'>
+                                        <img className="h-8 w-8" alt="typescript" src={require("../../assets/typescript-logo.png")}></img>
+                                    </div>
+                                    <div className='hidden sm:block flex w-full mb-2 sm:ml-6'>
+                                        <img className="h-8 w-8" alt="javascript" src={require("../../assets/JavaScript-logo.png")}></img>
+                                    </div>
+                                    <div className='hidden sm:block  flex w-full mb-2 sm:ml-6'>
+                                        <img className="h-8 w-8" alt="react" src={require("../../assets/react-icon.png")}></img>
+                                    </div>
+
+
+                                    {/* Row 3 */}
                                     <li>Agile Project Developmnet</li>
                                     <li>Full-Stack Development</li>
                                     <li>Data Strucutres</li>
@@ -109,7 +139,7 @@ const Resume = () => {
                             <div className='flex flex-col'>
                                 <div className='col-span-6 flex underline text-2xl sm:text-4xl mb-4'>Relevant Projects</div>
                                 <div className='my-2'>
-                                    <p className='font-bold text-xl sm:text-2xl'>Aggies Compute: All-In-One TAMU Student Calculator — Aggie Coding Club, Texas A&M University</p>
+                                    <p className='font-bold text-xl sm:text-2xl flex flex-row'>Aggies Compute: All-In-One TAMU Student Calculator —   <span><img className="ml-2 h-10 w-10 mx-2" alt="aggie compute" src={require("../../assets/ac_logo_colored.png")}></img></span> Aggie Coding Club, Texas A&M University</p>
                                     <p className='text-xl'>Project Manager, January 2023 — April 2023</p>
                                     <div className='list-dics font-base text-lg sm:text-xl mt-2'>
                                         <li>Developed a website with holistic calculator and resources for CompSci/Math majors to use throughout curriculum</li>
@@ -120,12 +150,12 @@ const Resume = () => {
                                 </div>
 
                                 <div className='my-2'>
-                                    <p className='font-bold text-xl sm:text-2xl mt-4'>SHPE Mobile App — Society of Hispanic Professional Engineers</p>
+                                    <p className='font-bold text-xl sm:text-2xl mt-4 flex flex-row'>SHPE Mobile App — <span><img className="ml-2 h-10 w-10 mx-2" alt="python" src={require("../../assets/SHPE_logo_colored.png")}></img></span> Society of Hispanic Professional Engineers</p>
                                     <p className='text-xl'>Full-Stack Developer, May 2023 – Current</p>
                                     <div className='list-dics font-base text-xl mt-2'>
                                         <li>Developed a mobile application for the Society of Hispanic Professional Engineers (SHPE)</li>
                                         <li>Collaborated with the organization officers and members to implement design, features, and gather feedback resulting in the deployment of a successful product.</li>
-                                        <li><span className='font-semibold'>Broader impact:</span> Enhance the experience of over 300 members by creating a platform to communicate important announcements in real-time, increase member engagement in events, and provide general resources for members.</li>
+                                        <li><span className='font-semibold'>Broader impact: </span> Enhance the experience of over 300 members by creating a platform to communicate important announcements in real-time, increase member engagement in events, and provide general resources for members.</li>
                                     </div>
                                 </div>
 
@@ -136,7 +166,7 @@ const Resume = () => {
                                         <li>Managed a team of 5 to develop a POS system to improve order processing efficiency for employees and customers</li>
                                         <li>Developed live, full-stack application for Spin ‘N Stone Pizza POS system using JavaScript, React, PostgreSQL</li>
                                         <li>Led front-end development of application and honed experience with interface creation and Figma prototyping</li>
-                                        <li><span className='font-semibold'>Broader impact:</span>Created application to model efficient POS system for local food retailer to apply undergraduate knowledge of full-stack development and real-time problem solving</li>
+                                        <li><span className='font-semibold'>Broader impact: </span>Created application to model efficient POS system for local food retailer to apply undergraduate knowledge of full-stack development and real-time problem solving</li>
                                     </div>
                                 </div>
                             </div>
@@ -146,13 +176,13 @@ const Resume = () => {
                                 <div className='col-span-6 flex underline text-2xl sm:text-4xl mb-4'>Work Experience</div>
 
                                 <div>
-                                    <p className='font-bold sm:text-2xl'>Undergraduate Teaching Fellow — Shell Engineering Foundations Lab, College Station, TX</p>
+                                    <p className='font-bold sm:text-2xl flex flex-row'>Undergraduate Teaching Fellow — <span><img className="ml-2 h-10 w-10 mx-2" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span> Shell Engineering Foundations Lab, College Station, TX</p>
                                     <p className='font-base text-xl'>Lab TA for ENGR 102/216/217/, Part-Time, August 2021 — Current</p>
                                     <div className='list-dics mt-2 font-base text-xl'>
                                         <li>Teaching electromagnetism & electromechanical systems to freshman/sophomore engineering students</li>
                                         <li>Grading technical lab reports and providing feedback</li>
                                         <li>Troubleshooting issues with Linux software and electromechanical equipment</li>
-                                        <li><span className='font-semibold'>Broader impact:</span>Introducing engineering students to fundamental processes of data collection, analysis, and formal lab reporting that they will utilize in their respective fields
+                                        <li><span className='font-semibold'>Broader impact: </span>Introducing engineering students to fundamental processes of data collection, analysis, and formal lab reporting that they will utilize in their respective fields
                                         </li>
                                     </div>
                                 </div>
@@ -160,10 +190,18 @@ const Resume = () => {
                             {/* Activities */}
                             <div className='flex flex-col'>
                                 <div className='col-span-6 flex underline text-2xl sm:text-4xl mb-4'>Activities</div>
-                                <div className='list-dics mt-2 font-base text-xl'>
+                                <div className='mt-2 font-base text-xl'>
+                                    <div className='flex flex-row'>
+                                        <span><img className="mr-2 h-6 w-16  " alt="python" src={require("../../assets/logo-acc.png")}></img></span>
+                                        Aggie Coding Club, January 2023 — Current
+                                    </div>
 
-                                    <li>Aggie Coding Club, January 2023 — Current</li>
-                                    <li>Society of Hispanic Professional Engineers, August 2021 — Current</li>
+
+                                    <div className='flex flex-row mt-4'>
+                                        <span><img className="mr-2 h-8 w-8" alt="python" src={require("../../assets/SHPE_logo_colored.png")}></img></span>
+                                        Society of Hispanic Professional Engineers, August 2021 — Current
+                                    </div>
+
                                 </div>
                             </div>
                             <div></div>
@@ -201,27 +239,29 @@ const Resume = () => {
 
 
                 {/* Accordian */}
-                {!open && (
-                    <div className="col-span-12 col-start-2 lg:col-start-0 lg:col-span-6 mt-12 w-full">
-                        <div className="flex-col">
-                            <div className='divide-y divide-black'>
-                                <div></div>
-                                {
-                                    resume_content.map((item, index) => (
-                                        <Accordion index={index} datas={item} />
-                                    ))
-                                }
-                                <div></div>
+                {
+                    !open && (
+                        <div className="col-span-12 col-start-2 lg:col-start-0 lg:col-span-6 mt-12 w-full">
+                            <div className="flex-col">
+                                <div className='divide-y divide-black'>
+                                    <div></div>
+                                    {
+                                        resume_content.map((item, index) => (
+                                            <Accordion index={index} datas={item} />
+                                        ))
+                                    }
+                                    <div></div>
 
+                                </div>
+                                <div></div>
                             </div>
-                            <div></div>
                         </div>
-                    </div>
 
-                )}
+                    )
+                }
 
 
-            </div>
+            </div >
 
         </div >
     )
