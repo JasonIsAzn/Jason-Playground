@@ -66,8 +66,8 @@ const Resume = () => {
                         <div className='col-span-12 col-start-2 space-y-10'>
                             {/* Education */}
                             <div>
-                                <div className='flex underline lg:text-4xl mb-4'>Education</div>
-                                <ul className='flex flex-col lg:text-xl list-disc ml-6'>
+                                <div className='flex underline sm:text-4xl mb-4'>Education</div>
+                                <ul className='flex flex-col sm:text-xl list-disc ml-6'>
                                     <li>Texas A&M University (TAMU), College Station, Texas </li>
                                     <li>Double Major: Bachelor of Science in Computer Science, Mathematics — May 2024</li>
                                     <li>Major GPR: 3.515</li>
@@ -77,12 +77,12 @@ const Resume = () => {
 
                             {/* Technical Skills */}
                             <div className='grid grid-cols-6'>
-                                <div className='col-span-6 flex underline lg:text-4xl mb-4 '>Technical Skills</div>
-                                <div className='col-span-4 grid gap-x-6 gap-y-2 sm:grid-cols-3 sm:gap-y-4 lg:text-xl ml-2'>
+                                <div className='col-span-6 flex underline sm:text-4xl mb-4 '>Technical Skills</div>
+                                <div className='col-span-4 grid gap-x-6 gap-y-2 sm:grid-cols-3 sm:gap-y-4 sm:text-xl ml-2 break-normal'>
                                     <li>C++</li>
                                     <li>Python</li>
                                     <li>GitHub</li>
-                                    <li>Java/TypeScript</li>
+                                    <li>Java/ TypeScript</li>
                                     <li>React</li>
                                     <li>SQL</li>
                                     <li>Agile Project Developmnet</li>
@@ -93,8 +93,8 @@ const Resume = () => {
 
                             {/* Relevant Coursework */}
                             <div className='grid grid-cols-6'>
-                                <div className='col-span-6 flex underline lg:text-4xl mb-4'>Relevant Coursework</div>
-                                <div className='col-span-6 grid gap-x-6 gap-y-2 sm:grid-cols-3  lg:text-xl list-disc ml-2'>
+                                <div className='col-span-6 flex underline sm:text-4xl mb-4'>Relevant Coursework</div>
+                                <div className='col-span-6 grid gap-x-6 gap-y-2 sm:grid-cols-3 sm:text-xl list-disc ml-2'>
                                     <li>CSCE 221 (Data Structures & Algorithms)</li>
                                     <li>CSCE 315 (Foundations of Software Engineering)</li>
                                     <li>CSCE 410 (Operating Systems)</li>
@@ -107,12 +107,12 @@ const Resume = () => {
                             </div>
                             {/* Relevant Projects */}
                             <div className='flex flex-col'>
-                                <div className='col-span-6 flex underline lg:text-4xl mb-4'>Relevant Projects</div>
+                                <div className='col-span-6 flex underline sm:text-4xl mb-4'>Relevant Projects</div>
 
                                 <div>
-                                    <p className='font-bold lg:text-2xl'>Aggies Compute: All-In-One TAMU Student Calculator — Aggie Coding Club, Texas A&M University</p>
-                                    <p>Project Manager, January 2023 — April 2023</p>
-                                    <div className='list-dics mt-2'>
+                                    <p className='font-bold sm:text-2xl'>Aggies Compute: All-In-One TAMU Student Calculator — Aggie Coding Club, Texas A&M University</p>
+                                    <p className='text-xl'>Project Manager, January 2023 — April 2023</p>
+                                    <div className='list-dics mt-2 font-base text-xl'>
                                         <li>Developed a website with holistic calculator and resources for CompSci/Math majors to use throughout curriculum</li>
                                         <li>Implemented full-stack development with an easily consumable interface for variety of technical backgrounds</li>
                                         <li>Utilized Agile software development model to oversee task management for a team of 10 members</li>
@@ -121,9 +121,9 @@ const Resume = () => {
                                 </div>
 
                                 <div>
-                                    <p className='font-bold lg:text-2xl mt-4'>SHPE Mobile App — Society of Hispanic Professional Engineers</p>
-                                    <p>Full-Stack Developer, May 2023 – Current</p>
-                                    <div className='list-dics mt-2'>
+                                    <p className='font-bold sm:text-2xl mt-4'>SHPE Mobile App — Society of Hispanic Professional Engineers</p>
+                                    <p className='text-xl'>Full-Stack Developer, May 2023 – Current</p>
+                                    <div className='list-dics mt-2 font-base text-xl'>
                                         <li>Developed a mobile application for the Society of Hispanic Professional Engineers (SHPE)</li>
                                         <li>Collaborated with the organization officers and members to implement design, features, and gather feedback resulting in the deployment of a successful product.</li>
                                         <li><span className='font-semibold'>Broader impact:</span> Enhance the experience of over 300 members by creating a platform to communicate important announcements in real-time, increase member engagement in events, and provide general resources for members.</li>
@@ -131,9 +131,9 @@ const Resume = () => {
                                 </div>
 
                                 <div>
-                                    <p className='font-bold lg:text-2xl mt-4'>Point-of-Sales (POS) System Design Project</p>
-                                    <p>Front-End Developer, August 2022 – December 2022</p>
-                                    <div className='list-dics mt-2'>
+                                    <p className='font-bold sm:text-2xl mt-4'>Point-of-Sales (POS) System Design Project</p>
+                                    <p className='text-xl'>Front-End Developer, August 2022 – December 2022</p>
+                                    <div className='list-dics mt-2 font-base text-xl'>
                                         <li>Managed a team of 5 to develop a POS system to improve order processing efficiency for employees and customers</li>
                                         <li>Developed live, full-stack application for Spin ‘N Stone Pizza POS system using JavaScript, React, PostgreSQL</li>
                                         <li>Led front-end development of application and honed experience with interface creation and Figma prototyping</li>
@@ -144,12 +144,12 @@ const Resume = () => {
 
                             {/* Work Experience */}
                             <div className='flex flex-col'>
-                                <div className='col-span-6 flex underline lg:text-4xl mb-4'>Work Experience</div>
+                                <div className='col-span-6 flex underline sm:text-4xl mb-4'>Work Experience</div>
 
                                 <div>
-                                    <p className='font-bold lg:text-2xl'>Undergraduate Teaching Fellow — Shell Engineering Foundations Lab, College Station, TX</p>
-                                    <p>Lab TA for ENGR 102/216/217/, Part-Time, August 2021 — Current</p>
-                                    <div className='list-dics mt-2'>
+                                    <p className='font-bold sm:text-2xl'>Undergraduate Teaching Fellow — Shell Engineering Foundations Lab, College Station, TX</p>
+                                    <p className='font-base text-xl'>Lab TA for ENGR 102/216/217/, Part-Time, August 2021 — Current</p>
+                                    <div className='list-dics mt-2 font-base text-xl'>
                                         <li>Teaching electromagnetism & electromechanical systems to freshman/sophomore engineering students</li>
                                         <li>Grading technical lab reports and providing feedback</li>
                                         <li>Troubleshooting issues with Linux software and electromechanical equipment</li>
@@ -160,8 +160,8 @@ const Resume = () => {
                             </div>
                             {/* Activities */}
                             <div className='flex flex-col'>
-                                <div className='col-span-6 flex underline lg:text-4xl mb-4'>Activities</div>
-                                <div className='list-dics mt-2'>
+                                <div className='col-span-6 flex underline sm:text-4xl mb-4'>Activities</div>
+                                <div className='list-dics mt-2 font-base text-xl'>
 
                                     <li>Aggie Coding Club, January 2023 — Current</li>
                                     <li>Society of Hispanic Professional Engineers, August 2021 — Current</li>
