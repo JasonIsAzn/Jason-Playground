@@ -37,7 +37,7 @@ const Projects = () => {
             {/* Project Cards */}
 
             <div className="flex flex-row flex-wrap justify-center items-center space-y-4 sm:space-y-0 md:space-x-4">
-                <div className={"bg-white w-[90%] sm:w-96 h-96 static bg-primary_yellow rounded border-2 " + (!isMobiletDevice() ? "hover:border-black hover:border hover:border-dashed hover:border-2" : "")}
+                <div className={"bg-white w-[90%] sm:w-96 h-[360px] static bg-primary_yellow rounded border-2 " + (!isMobiletDevice() ? "hover:border-black hover:border hover:border-dashed hover:border-2" : "")}
                     onMouseEnter={() => onMouseHover(0)}
                     onMouseLeave={() => onMouseHover(null)}
                     onClick={() => onTouchClick(0)}
@@ -59,7 +59,7 @@ const Projects = () => {
                                 <p className="flex flex-col text-lg space-y-1">
                                     <span> Aggies Compute is the free resource hub designed to support students throughout their college journey.</span>
                                     <span> We aim to centralize valuable resources and create comprehensive step-by-step produceures to cater to all learning styles.</span>
-                                    <div className='pt-8'>
+                                    <div className='sm:pt-10'>
                                         <a
                                             href='https://github.com/aggie-coding-club/Aggies-Compute'
                                             rel="noreferrer"
@@ -76,7 +76,7 @@ const Projects = () => {
                 </div>
 
 
-                <div className={"bg-white w-[90%] sm:w-96 h-96 static bg-primary_yellow rounded border-2 " + (isMobiletDevice() ? "" : "hover:border-black hover:border hover:border-dashed hover:border-2")}
+                <div className={"bg-white w-[90%] sm:w-96 h-[360px] static bg-primary_yellow rounded border-2 " + (isMobiletDevice() ? "" : "hover:border-black hover:border hover:border-dashed hover:border-2")}
                     onMouseEnter={() => onMouseHover(1)}
                     onMouseLeave={() => onMouseHover(null)}
                     onClick={() => onTouchClick(1)}
@@ -100,7 +100,7 @@ const Projects = () => {
                                     <span>The SHPE app is designed for members of the Society of Hispanic Professional Engineers. </span>
                                     <span>We provide features like annoucmnets, connection between members, and access to resources.</span>
                                     <span>The goal is to increase overall member invovlement.</span>
-                                    <div>
+                                    <div className='sm:pt-6'>
                                         <a href='/#'
                                             rel="noreferrer"
                                             target="_blank"
@@ -116,7 +116,7 @@ const Projects = () => {
                 </div>
 
 
-                <div className={"bg-white w-[90%] sm:w-96 h-96 static bg-primary_yellow rounded border-2 " + (isMobiletDevice() ? "" : "hover:border-black hover:border hover:border-dashed hover:border-2")}
+                <div className={"bg-white w-[90%] sm:w-96 h-[360px] static bg-primary_yellow rounded border-2 " + (isMobiletDevice() ? "" : "hover:border-black hover:border hover:border-dashed hover:border-2")}
                     onMouseEnter={() => onMouseHover(2)}
                     onMouseLeave={() => onMouseHover(null)}
                     onClick={() => onTouchClick(2)}
@@ -138,7 +138,7 @@ const Projects = () => {
                                 <p className="flex flex-col text-lg space-y-1">
                                     <span>A point of system application for Spin N' Stone, a pizza company. </span>
                                     <span>We developed a  user interface for both mangament and customer to improve expereience of both customer and manager</span>
-                                    <div className='pt-14'>
+                                    <div className='pt-6 sm:pt-[70px]'>
                                         <a
                                             href='https://github.com/JasonIsAzn/CSC315_FA22_FInal_Project'
                                             rel="noreferrer"

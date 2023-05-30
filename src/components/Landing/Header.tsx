@@ -14,8 +14,16 @@ import { Typewriter } from 'react-simple-typewriter'
 const Header = () => {
     const [background, setBackground] = useState(0);
 
+    function isMobiletDevice(): boolean {
+        const userAgent: string = navigator.userAgent;
+
+        const isMobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+
+        return isMobile ? true : false;
+    }
+
     useEffect(() => {
-        if (window.innerWidth < 1300) {
+        if (isMobiletDevice()) {
             setBackground(1);
         }
     }, []);
@@ -222,7 +230,7 @@ const Header = () => {
         },
         particles: {
             color: {
-                value: "#ECE75F",
+                value: "#FF0000",
             },
             links: {
                 blink: false,
@@ -485,7 +493,7 @@ const Header = () => {
         },
         particles: {
             color: {
-                value: "#ECE75F",
+                value: "#3ded97",
             },
             links: {
                 blink: false,
