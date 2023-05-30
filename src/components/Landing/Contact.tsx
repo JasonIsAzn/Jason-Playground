@@ -195,7 +195,7 @@ const Contact = () => {
                 )}
 
                 {/* Button */}
-                <div className="col-start-11 col-span-2 flex justify-center items-center mt-16 mr-16 cursor-pointer">
+                <div className="col-span-12 sm:col-start-11 sm:col-span-2 flex justify-center items-center mt-16 sm:mr-16 cursor-pointer">
                     <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64')}
                         onMouseEnter={() => setIsHovered(false)}
                         onMouseLeave={() => setIsHovered(true)}

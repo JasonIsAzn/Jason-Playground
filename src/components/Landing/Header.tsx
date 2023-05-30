@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import Particles from 'react-tsparticles';
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from 'tsparticles'
@@ -11,8 +11,15 @@ import tree from "../..assets/tree.svg"
 import { Typewriter } from 'react-simple-typewriter'
 
 
-const Header = (enabled: any) => {
+const Header = () => {
     const [background, setBackground] = useState(0);
+
+    useEffect(() => {
+        if (window.innerWidth < 1300) {
+            setBackground(1);
+        }
+    }, []);
+
 
     const particlesInit = useCallback(async (engine: Engine): Promise<void> => {
         console.log(engine);
@@ -630,7 +637,7 @@ const Header = (enabled: any) => {
 
             {/* Down Button */}
             <button id="go-down-button" onClick={goDown}
-                className="absolute m-6 mr-8 bottom-0 right-0 transform -translate-x-0 -translate-y-0 z-10 animate-bounce object-scale-down h-14  w-14">
+                className="absolute m-6 mb-0 sm:mb-2 mr-8 bottom-0 right-0 transform -translate-x-0 -translate-y-0 z-10 animate-bounce object-scale-down h-14  w-14">
                 <img src={require("../../assets/arrow.png")} alt="go Down Button" />
             </button>
         </div >
