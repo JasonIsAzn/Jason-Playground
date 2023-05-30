@@ -18,7 +18,8 @@ const Contact = () => {
 
                 {/* Contact Methods */}
                 {!open && (
-                    < div className="col-span-12 flex flex-col sm:flex-row sm:flex-wrap justify-center items-center space-x-10 my-48 text-3xl font-semibold m-8">
+                    < div className="col-span-12 flex flex-col sm:flex-row sm:flex-wrap justify-center items-center sm:space-x-10 my-48 text-3xl font-semibold m-8">
+
                         <button
                             className='flex hover:lg:text-4xl'
                             onMouseOver={() => setOver(0)}
@@ -51,6 +52,7 @@ const Contact = () => {
                                     icon={faLinkedinIn} />
                             </a>
                         </button>
+
                         <button
                             className='flex hover:lg:text-4xl'
                             onMouseOver={() => setOver(2)}

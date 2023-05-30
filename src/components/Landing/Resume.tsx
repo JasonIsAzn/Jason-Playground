@@ -70,7 +70,7 @@ const Resume = () => {
                                 <ul className='flex flex-col text-lg sm:text-xl list-disc ml-6'>
                                     <li >
                                         <div className='flex flex-row'>
-                                            Texas A&M University (TAMU) <span><img className="ml-2 h-8 w-8" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span>, College Station, Texas
+                                            Texas A&M University (TAMU) <span className='hidden sm:block'><img className="ml-2 h-8 w-8" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span>, College Station, Texas
                                         </div>
                                     </li>
                                     <li>Double Major: Bachelor of Science in Computer Science, Mathematics — May 2024</li>
@@ -175,7 +175,7 @@ const Resume = () => {
                                 <div className='col-span-6 flex underline text-2xl sm:text-4xl mb-4'>Work Experience</div>
 
                                 <div>
-                                    <p className='font-bold sm:text-2xl flex flex-row'>Undergraduate Teaching Fellow — <span className='hidden xl:block'><img className="ml-2 h-10 w-10 mx-2" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span> Shell Engineering Foundations Lab, College Station, TX</p>
+                                    <p className='font-bold text-xl sm:text-2xl flex flex-row'>Undergraduate Teaching Fellow — <span className='hidden xl:block'><img className="ml-2 h-10 w-10 mx-2" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span> Shell Engineering Foundations Lab, College Station, TX</p>
                                     <p className='font-base text-xl flex flex-row'>Lab TA for ENGR 102/216/217/, Part-Time, August 2021 <span className='hidden sm:block xl:hidden'><img className="h-10 w-10 mx-2" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span>— Current</p>
                                     <div className='list-dics mt-2 font-base text-xl'>
                                         <li>Teaching electromagnetism & electromechanical systems to freshman/sophomore engineering students</li>
