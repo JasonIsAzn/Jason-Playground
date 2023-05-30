@@ -87,9 +87,9 @@ const Contact = () => {
 
                 {/* Expanded Section */}
                 {open && (
-                    <div className='col-start-3 sm:col-start-4 col-span-2 my-8 mb-0 sm:mb-8'>
+                    <div className='col-start-2 sm:col-start-3 sm:col-start-4 col-span-10 sm:col-span-2 mt-8 mx-8 sm:mx-0 sm:mb-8'>
                         <div className='my-12 text-2xl sm:text-xl md:text-2xl lg:text-3xl'>
-                            <div className='flex flex-col space-y-4'>
+                            <div className='flex flex-row flex-wrap sm:flex-col justify-between sm:justify-start   sm:space-x-0 sm:space-y-4'>
                                 <button
                                     className='flex hover:lg:text-4xl'
                                     onMouseOver={() => setOver(0)}
@@ -103,7 +103,6 @@ const Contact = () => {
                                         <FontAwesomeIcon size={over === 0 ? "lg" : "1x"}
                                             icon={faEnvelope} />
                                         <span className='text'>Email</span>
-
                                     </a>
                                 </button>
                                 <button
@@ -152,7 +151,6 @@ const Contact = () => {
                                         <FontAwesomeIcon size={over === 3 ? "lg" : "1x"}
                                             icon={faInstagram} />
                                         <span className='text'>Instagram</span>
-
                                     </a>
                                 </button>
                             </div>
