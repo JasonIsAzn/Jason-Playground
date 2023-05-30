@@ -7,9 +7,25 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 
 const Contact = () => {
-    const [isHovered, setIsHovered] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
     const [open, setOpen] = useState(false);
     const [over, setOver] = useState<number | null>(null);
+
+    function isMobiletDevice(): boolean {
+        const userAgent: string = navigator.userAgent;
+
+        const isMobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+
+        return isMobile ? true : false;
+    }
+
+
+    function onMouseHover(hover: boolean) {
+        if (isMobiletDevice()) {
+            return;
+        }
+        setIsHovered(hover);
+    }
 
     return (
         <div id="section-contact" className='flex flex-col py-8 bg-[#F5F5F1]'>
@@ -194,18 +210,18 @@ const Contact = () => {
 
                 {/* Button */}
                 <div className="col-span-12 sm:col-start-11 sm:col-span-2 flex justify-center items-center mt-16 sm:mr-16 cursor-pointer">
-                    <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64')}
-                        onMouseEnter={() => setIsHovered(false)}
-                        onMouseLeave={() => setIsHovered(true)}
+                    <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (isMobiletDevice() ? '' : (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))}
+                        onMouseEnter={() => onMouseHover(true)}
+                        onMouseLeave={() => onMouseHover(false)}
                         onClick={() => setOpen(!open)}
                     >
-                        {isHovered ? (
-                            <div className='text-white font-semibold'>
-                                {open ? '-' : '+'}
+                        {open ? (
+                            <div className='text-white font-semibold '>
+                                -
                             </div>
                         ) : (
                             <div className='flex overflow-hidden whitespace-nowrap text-white text-lg cursor-pointer'>
-                                {open ? '-' : 'Feel free to reach out!'}
+                                {isHovered ? (isMobiletDevice() ? '+' : 'feel free to reach out!') : '+'}
                             </div>
                         )}
                     </div>

@@ -35,12 +35,27 @@ const resume_content = [
 ]
 
 const Resume = () => {
-    const [isHovered, setIsHovered] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
     const [open, setOpen] = useState(false);
 
     var expandRef = useRef<null | HTMLDivElement>(null);
 
-    function collapseSection(isOpen: boolean) {
+    function isMobiletDevice(): boolean {
+        const userAgent: string = navigator.userAgent;
+
+        const isMobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+
+        return isMobile ? true : false;
+    }
+
+    function onMouseHover(hover: boolean) {
+        if (isMobiletDevice()) {
+            return;
+        }
+        setIsHovered(hover);
+    }
+
+    function collapseSection() {
         setOpen(!open)
         if (open) {
             expandRef!.current!.scrollIntoView();
@@ -218,18 +233,18 @@ const Resume = () => {
                     </a>
                     {/* Button */}
                     <div className={"flex items-center cursor-pointer " + (open ? 'justify-end mr-8' : 'justify-center my-32 mb-12 lg:mb-32 sm:mr-[100px] lg:mr-[300px]')}>
-                        <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64')}
-                            onMouseEnter={() => setIsHovered(false)}
-                            onMouseLeave={() => setIsHovered(true)}
-                            onClick={() => collapseSection(open)}
+                        <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (isMobiletDevice() ? '' : (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))}
+                            onMouseEnter={() => onMouseHover(true)}
+                            onMouseLeave={() => onMouseHover(false)}
+                            onClick={() => collapseSection()}
                         >
-                            {isHovered ? (
-                                <div className='text-white font-semibold'>
-                                    {open ? '-' : '+'}
+                            {open ? (
+                                <div className='text-white font-semibold '>
+                                    -
                                 </div>
                             ) : (
                                 <div className='flex overflow-hidden whitespace-nowrap text-white text-lg cursor-pointer'>
-                                    {open ? '-' : 'the whole resume'}
+                                    {isHovered ? (isMobiletDevice() ? '+' : 'the whole resume') : '+'}
                                 </div>
                             )}
                         </div>

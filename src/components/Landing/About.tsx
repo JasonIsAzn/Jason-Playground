@@ -6,21 +6,37 @@ import { Ripple, initTE } from "tw-elements";
 initTE({ Ripple });
 
 const About = () => {
-    const [isHovered, setIsHovered] = useState(true); // button hover
+    const [isHovered, setIsHovered] = useState(false); // button hover
     const [open, setOpen] = useState(false); // If expanded is open
     const [item, setItem] = useState(0); // item chosen in expanded section
     const [itemHovered, setItemHovered] = useState<number | null>(null); // item hover effect
 
+    function isMobiletDevice(): boolean {
+        const userAgent: string = navigator.userAgent;
+
+        const isMobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+
+        return isMobile ? true : false;
+    }
+
+
     var collapseRef = useRef<null | HTMLDivElement>(null);
     var expandRef = useRef<null | HTMLDivElement>(null);
 
-    function collapseSection(isOpen: boolean) {
+    function collapseSection() {
         setOpen(!open)
         if (!open) {
             expandRef!.current!.scrollIntoView();
         } else {
             collapseRef!.current!.scrollIntoView();
         }
+    }
+
+    function onMouseHover(hover: boolean) {
+        if (isMobiletDevice()) {
+            return;
+        }
+        setIsHovered(hover);
     }
 
     function delay(ms: number) {
@@ -323,18 +339,19 @@ const About = () => {
                     className={"col-span-2 flex justify-center items-center mt-16 cursor-pointer " + (open ? 'col-start-11' : 'col-start-9')}
                     id='expand-about-btn'
                 >
-                    <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64')}
-                        onMouseEnter={() => setIsHovered(false)}
-                        onMouseLeave={() => setIsHovered(true)}
-                        onClick={() => collapseSection(open)}
+                    <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (isMobiletDevice() ? '' : (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))
+                    }
+                        onMouseEnter={() => onMouseHover(true)}
+                        onMouseLeave={() => onMouseHover(false)}
+                        onClick={() => collapseSection()}
                     >
-                        {isHovered ? (
-                            <div className='text-white font-semibold'>
-                                {open ? '-' : '+'}
+                        {open ? (
+                            <div className='text-white font-semibold '>
+                                -
                             </div>
                         ) : (
                             <div className='flex overflow-hidden whitespace-nowrap text-white text-lg cursor-pointer'>
-                                {open ? '-' : 'Learn more about me!'}
+                                {isHovered ? (isMobiletDevice() ? '+' : 'Learn more about me!') : '+'}
                             </div>
                         )}
                     </div>
