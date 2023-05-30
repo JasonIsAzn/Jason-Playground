@@ -113,7 +113,6 @@ const Resume = () => {
                                         <img className="h-8 w-8" alt="react" src={require("../../assets/react-icon.png")}></img>
                                     </div>
 
-
                                     {/* Row 3 */}
                                     <li>Agile Project Developmnet</li>
                                     <li>Full-Stack Development</li>
@@ -139,8 +138,8 @@ const Resume = () => {
                             <div className='flex flex-col'>
                                 <div className='col-span-6 flex underline text-2xl sm:text-4xl mb-4'>Relevant Projects</div>
                                 <div className='my-2'>
-                                    <p className='font-bold text-xl sm:text-2xl flex flex-row'>Aggies Compute: All-In-One TAMU Student Calculator —   <span><img className="ml-2 h-10 w-10 mx-2" alt="aggie compute" src={require("../../assets/ac_logo_colored.png")}></img></span> Aggie Coding Club, Texas A&M University</p>
-                                    <p className='text-xl'>Project Manager, January 2023 — April 2023</p>
+                                    <p className='font-bold text-xl sm:text-2xl flex flex-row'>Aggies Compute: All-In-One TAMU Student Calculator — <span className='hidden xl:block'><img className="ml-2 h-10 w-10 mx-2" alt="aggie compute" src={require("../../assets/ac_logo_colored.png")}></img></span> Aggie Coding Club, Texas A&M University</p>
+                                    <p className='text-xl flex flex-row mt-2'>Project Manager, January 2023 <span className='hidden sm:block xl:hidden'><img className="h-10 w-10 mx-2 " alt="aggie compute" src={require("../../assets/ac_logo_colored.png")}></img></span> —  April 2023</p>
                                     <div className='list-dics font-base text-lg sm:text-xl mt-2'>
                                         <li>Developed a website with holistic calculator and resources for CompSci/Math majors to use throughout curriculum</li>
                                         <li>Implemented full-stack development with an easily consumable interface for variety of technical backgrounds</li>
@@ -150,8 +149,8 @@ const Resume = () => {
                                 </div>
 
                                 <div className='my-2'>
-                                    <p className='font-bold text-xl sm:text-2xl mt-4 flex flex-row'>SHPE Mobile App — <span><img className="ml-2 h-10 w-10 mx-2" alt="python" src={require("../../assets/SHPE_logo_colored.png")}></img></span> Society of Hispanic Professional Engineers</p>
-                                    <p className='text-xl'>Full-Stack Developer, May 2023 – Current</p>
+                                    <p className='font-bold text-xl sm:text-2xl mt-4 flex flex-row'>SHPE Mobile App — <span className='hidden xl:block'><img className="ml-2 h-10 w-10 mx-2" alt="python" src={require("../../assets/SHPE_logo_colored.png")}></img></span> Society of Hispanic Professional Engineers</p>
+                                    <p className='text-xl flex flex-row mt-2'>Full-Stack Developer, May 2023 <span className='hidden sm:block xl:hidden'><img className="h-10 w-10 mx-2 " alt="shpe" src={require("../../assets/SHPE_logo_colored.png")}></img></span>– Current</p>
                                     <div className='list-dics font-base text-xl mt-2'>
                                         <li>Developed a mobile application for the Society of Hispanic Professional Engineers (SHPE)</li>
                                         <li>Collaborated with the organization officers and members to implement design, features, and gather feedback resulting in the deployment of a successful product.</li>
@@ -176,8 +175,8 @@ const Resume = () => {
                                 <div className='col-span-6 flex underline text-2xl sm:text-4xl mb-4'>Work Experience</div>
 
                                 <div>
-                                    <p className='font-bold sm:text-2xl flex flex-row'>Undergraduate Teaching Fellow — <span><img className="ml-2 h-10 w-10 mx-2" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span> Shell Engineering Foundations Lab, College Station, TX</p>
-                                    <p className='font-base text-xl'>Lab TA for ENGR 102/216/217/, Part-Time, August 2021 — Current</p>
+                                    <p className='font-bold sm:text-2xl flex flex-row'>Undergraduate Teaching Fellow — <span className='hidden xl:block'><img className="ml-2 h-10 w-10 mx-2" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span> Shell Engineering Foundations Lab, College Station, TX</p>
+                                    <p className='font-base text-xl flex flex-row'>Lab TA for ENGR 102/216/217/, Part-Time, August 2021 <span className='hidden sm:block xl:hidden'><img className="h-10 w-10 mx-2" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span>— Current</p>
                                     <div className='list-dics mt-2 font-base text-xl'>
                                         <li>Teaching electromagnetism & electromechanical systems to freshman/sophomore engineering students</li>
                                         <li>Grading technical lab reports and providing feedback</li>

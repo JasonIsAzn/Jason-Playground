@@ -78,8 +78,6 @@ const Contact = () => {
                                 className='space-x-4'>
                                 <FontAwesomeIcon size={over === 3 ? "lg" : "1x"}
                                     icon={faInstagram} />
-
-
                             </a>
                         </button>
                     </div>
