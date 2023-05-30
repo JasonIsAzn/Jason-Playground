@@ -1,14 +1,19 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import Particles from 'react-tsparticles';
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from 'tsparticles'
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
-import sunRise from "../../assets/lines.svg"
+import randomLines from "../../assets/lines.svg"
+import sunRise from "../../assets/sunrise.svg"
+import smallDeer from "../../assets/smalldeer.svg"
+import tree from "../..assets/tree.svg"
 
 import { Typewriter } from 'react-simple-typewriter'
 
 
 const Header = (enabled: any) => {
+    const [background, setBackground] = useState(0);
+
     const particlesInit = useCallback(async (engine: Engine): Promise<void> => {
         console.log(engine);
         await loadFull(engine);
@@ -19,7 +24,401 @@ const Header = (enabled: any) => {
         console.log(container);
     }, []);
 
-    const options = {
+    let options0 = {
+        name: "Polygon Mask",
+        interactivity: {
+            events: {
+                onClick: {
+                    enable: false,
+                    mode: "push"
+                },
+                onDiv: {
+                    elementId: "repulse-div",
+                    enable: false,
+                    mode: "repulse"
+                },
+                onHover: {
+                    enable: true,
+                    mode: "bubble",
+                    parallax: {
+                        enable: false,
+                        force: 2,
+                        smooth: 10
+                    }
+                }
+            },
+            modes: {
+                bubble: {
+                    distance: 40,
+                    duration: 2,
+                    opacity: 8,
+                    size: 6
+                },
+                connect: {
+                    distance: 80,
+                    links: {
+                        opacity: 0.5
+                    },
+                    radius: 60
+                },
+                grab: {
+                    distance: 400,
+                    links: {
+                        opacity: 1
+                    }
+                },
+                push: {
+                    quantity: 4
+                },
+                remove: {
+                    quantity: 2
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4
+                },
+                slow: {
+                    active: false,
+                    radius: 0,
+                    factor: 1
+                }
+            }
+        },
+        particles: {
+            color: {
+                value: "#ECE75F",
+            },
+            links: {
+                blink: false,
+                color: "#FFFFFF",
+                consent: false,
+                distance: 30,
+                enable: true,
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                outModes: "bounce",
+                speed: 1
+            },
+            number: {
+                limit: 0,
+                value: 200
+            },
+            opacity: {
+                animation: {
+                    enable: true,
+                    speed: 2,
+                    sync: false
+                },
+                value: {
+                    min: 0.05,
+                    max: 0.4
+                }
+            },
+            shape: {
+                type: "circle"
+            },
+            size: {
+                value: 2
+            }
+        },
+        polygon: {
+            draw: {
+                enable: true,
+                lineColor: "rgba(255,255,255,0.2)",
+                lineWidth: 1
+            },
+            enable: true,
+            move: {
+                radius: 10
+            },
+            inline: {
+                arrangement: "equidistant"
+            },
+            scale: 1,
+            type: "inline",
+            url: randomLines,
+        },
+        background: {
+            color: "#121212",
+            image: "",
+            position: "50% 50%",
+            repeat: "no-repeat",
+            size: "cover"
+        },
+        "fullScreen": {
+            "enable": true,
+            "zIndex": true ? -1 : 1
+        },
+    } as ISourceOptions;
+
+
+    let options1 = {
+        name: "Polygon Mask",
+        interactivity: {
+            events: {
+                onClick: {
+                    enable: false,
+                    mode: "push"
+                },
+                onDiv: {
+                    elementId: "repulse-div",
+                    enable: false,
+                    mode: "repulse"
+                },
+                onHover: {
+                    enable: true,
+                    mode: "bubble",
+                    parallax: {
+                        enable: false,
+                        force: 2,
+                        smooth: 10
+                    }
+                }
+            },
+            modes: {
+                bubble: {
+                    distance: 40,
+                    duration: 2,
+                    opacity: 8,
+                    size: 6
+                },
+                connect: {
+                    distance: 80,
+                    links: {
+                        opacity: 0.5
+                    },
+                    radius: 60
+                },
+                grab: {
+                    distance: 400,
+                    links: {
+                        opacity: 1
+                    }
+                },
+                push: {
+                    quantity: 4
+                },
+                remove: {
+                    quantity: 2
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4
+                },
+                slow: {
+                    active: false,
+                    radius: 0,
+                    factor: 1
+                }
+            }
+        },
+        particles: {
+            color: {
+                value: "#ECE75F",
+            },
+            links: {
+                blink: false,
+                color: "#FFFFFF",
+                consent: false,
+                distance: 30,
+                enable: true,
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                outModes: "bounce",
+                speed: 1
+            },
+            number: {
+                limit: 0,
+                value: 200
+            },
+            opacity: {
+                animation: {
+                    enable: true,
+                    speed: 2,
+                    sync: false
+                },
+                value: {
+                    min: 0.05,
+                    max: 0.4
+                }
+            },
+            shape: {
+                type: "circle"
+            },
+            size: {
+                value: 2
+            }
+        },
+        polygon: {
+            draw: {
+                enable: true,
+                lineColor: "rgba(255,255,255,0.2)",
+                lineWidth: 1
+            },
+            enable: true,
+            move: {
+                radius: 10
+            },
+            inline: {
+                arrangement: "equidistant"
+            },
+            scale: 1,
+            type: "inline",
+            url: smallDeer,
+        },
+        background: {
+            color: "#121212",
+            image: "",
+            position: "50% 50%",
+            repeat: "no-repeat",
+            size: "cover"
+        },
+        "fullScreen": {
+            "enable": true,
+            "zIndex": true ? -1 : 1
+        },
+    } as ISourceOptions;
+
+
+
+    let options3 = {
+        name: "Polygon Mask",
+        interactivity: {
+            events: {
+                onClick: {
+                    enable: false,
+                    mode: "push"
+                },
+                onDiv: {
+                    elementId: "repulse-div",
+                    enable: false,
+                    mode: "repulse"
+                },
+                onHover: {
+                    enable: true,
+                    mode: "bubble",
+                    parallax: {
+                        enable: false,
+                        force: 2,
+                        smooth: 10
+                    }
+                }
+            },
+            modes: {
+                bubble: {
+                    distance: 40,
+                    duration: 2,
+                    opacity: 8,
+                    size: 6
+                },
+                connect: {
+                    distance: 80,
+                    links: {
+                        opacity: 0.5
+                    },
+                    radius: 60
+                },
+                grab: {
+                    distance: 400,
+                    links: {
+                        opacity: 1
+                    }
+                },
+                push: {
+                    quantity: 4
+                },
+                remove: {
+                    quantity: 2
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4
+                },
+                slow: {
+                    active: false,
+                    radius: 0,
+                    factor: 1
+                }
+            }
+        },
+        particles: {
+            color: {
+                value: "#ECE75F",
+            },
+            links: {
+                blink: false,
+                color: "#FFFFFF",
+                consent: false,
+                distance: 30,
+                enable: true,
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                outModes: "bounce",
+                speed: 1
+            },
+            number: {
+                limit: 0,
+                value: 200
+            },
+            opacity: {
+                animation: {
+                    enable: true,
+                    speed: 2,
+                    sync: false
+                },
+                value: {
+                    min: 0.05,
+                    max: 0.4
+                }
+            },
+            shape: {
+                type: "circle"
+            },
+            size: {
+                value: 2
+            }
+        },
+        polygon: {
+            draw: {
+                enable: true,
+                lineColor: "rgba(255,255,255,0.2)",
+                lineWidth: 1
+            },
+            enable: true,
+            move: {
+                radius: 10
+            },
+            inline: {
+                arrangement: "equidistant"
+            },
+            scale: 1,
+            type: "inline",
+            url: sunRise,
+        },
+        background: {
+            color: "#121212",
+            image: "",
+            position: "50% 50%",
+            repeat: "no-repeat",
+            size: "cover"
+        },
+        "fullScreen": {
+            "enable": true,
+            "zIndex": true ? -1 : 1
+        },
+    } as ISourceOptions;
+
+
+    let options2 = {
         name: "Polygon Mask",
         interactivity: {
             events: {
@@ -153,11 +552,41 @@ const Header = (enabled: any) => {
         window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
     }
 
+    function changeBackground() {
+        if (background === 0) {
+            setBackground(1);
+        } else if (background === 1) {
+            setBackground(2);
+        } else if (background === 2) {
+            setBackground(0);
+        } else {
+            // setBackground(0);
+        }
+
+    }
+
+
     return (
         <div id="section-header" className=''>
             {/* Background */}
-            <Particles className="h-screen" id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options}
-            />
+            {/* THIS IS HORRIBLE */}
+
+            {background === 0 && (
+                <Particles className="h-screen" id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options0} />
+            )}
+
+            {background === 1 && (
+                <Particles className="h-screen" id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options1} />
+            )}
+
+            {background === 2 && (
+                <Particles className="h-screen" id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options2} />
+            )}
+
+            {background === 3 && (
+                <Particles className="h-screen" id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options3} />
+            )}
+
 
             {/* Title */}
             <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
@@ -180,6 +609,24 @@ const Header = (enabled: any) => {
                     </span>
                 </h1>
             </div>
+
+            <button onClick={() => changeBackground()}
+                className="absolute m-6 mr-8 top-0 right-0 h-14  w-14">
+
+                {background === 0 && (
+                    <img src={require("../../assets/radio-yellow.png")} alt="change background" />
+                )}
+                {background === 1 && (
+                    <img src={require("../../assets/radio-red.png")} alt="change background" />
+                )}
+                {background === 2 && (
+                    <img src={require("../../assets/radio-green.png")} alt="change background" />
+                )}
+                {background === 3 && (
+                    <img src={require("../../assets/radio-blue.png")} alt="change background" />
+                )}
+
+            </button>
 
             {/* Down Button */}
             <button id="go-down-button" onClick={goDown}
