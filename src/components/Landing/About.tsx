@@ -8,14 +8,14 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 initTE({ Ripple });
 const responsive = {
     0: { items: 1 },
-    640: { items: 2 },
+    700: { items: 2 },
     1024: { items: 3 },
 };
 
 const anime_items = [
     <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-36 px-4 mx-16
-      transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
     >
         <div className="flex flex-col items-center justify-center h-48 mx-5">
             <img alt="anime 0" src={require("../../assets/anime_0.jpg")}></img>
@@ -24,8 +24,8 @@ const anime_items = [
     </div>,
 
     <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-36 px-4 mx-4
-  transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
     >
         <div className="flex flex-col items-center justify-center h-48 mx-5">
             <img alt="anime 1" src={require("../../assets/anime_1.jpg")}></img>
@@ -34,8 +34,8 @@ const anime_items = [
     </div>,
 
     <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-36 px-4 mx-4
-  transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
     >
         <div className="flex flex-col items-center justify-center h-48 mx-5">
             <img alt="anime 2" src={require("../../assets/anime_2.png")}></img>
@@ -43,8 +43,8 @@ const anime_items = [
         </div>
     </div>,
     <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-36 px-4 mx-4
-transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px]px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
     >
         <div className="flex flex-col items-center justify-center h-48 mx-5">
             <img alt="anime 3" src={require("../../assets/anime_2.png")}></img>
@@ -328,7 +328,7 @@ const About = () => {
 
                         {/* Image Anime Set */}
                         {(item === 1) && (
-                            <div className='flex flex-col rounded-md justify-center items-center mt-8 mb-24 pt-12 px-12 
+                            <div className='flex flex-col rounded-md justify-center items-center mt-8 mb-24 pt-12 px-12 mr-8 sm:mr-12 md:mr-20 lg:mr-28
                             bg-gradient-to-r 
                             from-primary_yellow
                             to-primary_yellow

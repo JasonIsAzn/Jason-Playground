@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "525px", // using for coursel purposes
+      },
       colors: {
         bg_grey: "#121212",
         grey: {
