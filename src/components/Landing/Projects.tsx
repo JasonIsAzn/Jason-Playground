@@ -35,14 +35,13 @@ const Projects = () => {
             <h1 className='text-5xl md:text-6xl lg:text-8xl font-semibold py-14'>Projects</h1>
 
             {/* Project Cards */}
-
             <div className="flex flex-row flex-wrap justify-center items-center space-y-4 sm:space-y-0 md:space-x-4">
                 <div className={"bg-white w-[90%] sm:w-96 h-[360px] static bg-primary_yellow rounded border-2 " + (!isMobiletDevice() ? "hover:border-black hover:border hover:border-dashed hover:border-2" : "")}
                     onMouseEnter={() => onMouseHover(0)}
                     onMouseLeave={() => onMouseHover(null)}
                     onClick={() => onTouchClick(0)}
                 >
-                    <div className={"bg-white w-[100%] h-[100%] border-black rounded border-2 transition-all duration-150 ease-out py-12 px-8 flex border " + (!isMobiletDevice() ? "hover:-m-6 hover:border-primary_yellow hover:border-3 hover:shadow-2xl hover:ease-in" : "") + (switchText === 0 && isMobiletDevice() ? "border-primary_yellow border-3 shadow-2xl ease-in" : "")}>
+                    <div className={"bg-white w-[100%] h-[100%] border-black rounded border-2 transition-all duration-150 ease-out p-8 flex border " + (!isMobiletDevice() ? "hover:-m-6 hover:border-primary_yellow hover:border-3 hover:shadow-2xl hover:ease-in" : "") + (switchText === 0 && isMobiletDevice() ? "border-primary_yellow border-3 shadow-2xl ease-in" : "")}>
                         {switchText !== 0 && (
                             <div className='flex flex-col justify-end'>
                                 <img
@@ -81,7 +80,7 @@ const Projects = () => {
                     onMouseLeave={() => onMouseHover(null)}
                     onClick={() => onTouchClick(1)}
                 >
-                    <div className={"bg-white w-[100%] h-[100%] border-black rounded border-2 transition-all duration-150 ease-out py-12 px-8 flex border " + (isMobiletDevice() ? "" : "hover:-m-6 hover:border-primary_yellow hover:border-3 hover:shadow-2xl hover:ease-in") + (switchText === 1 && isMobiletDevice() ? "border-primary_yellow border-3 shadow-2xl ease-in" : "")}
+                    <div className={"bg-white w-[100%] h-[100%] border-black rounded border-2 transition-all duration-150 ease-out p-8 flex border " + (isMobiletDevice() ? "" : "hover:-m-6 hover:border-primary_yellow hover:border-3 hover:shadow-2xl hover:ease-in") + (switchText === 1 && isMobiletDevice() ? "border-primary_yellow border-3 shadow-2xl ease-in" : "")}
                     >
                         {switchText !== 1 && (
                             <div className='flex flex-col justify-end'>
@@ -121,7 +120,7 @@ const Projects = () => {
                     onMouseLeave={() => onMouseHover(null)}
                     onClick={() => onTouchClick(2)}
                 >
-                    <div className={"bg-white w-[100%] h-[100%] border-black rounded border-2 transition-all duration-150 ease-out py-12 px-8 flex border " + (isMobiletDevice() ? "" : "hover:-m-6 hover:border-primary_yellow hover:border-3 hover:shadow-2xl hover:ease-in") + (switchText === 2 && isMobiletDevice() ? "border-primary_yellow border-3 shadow-2xl ease-in" : "")}>
+                    <div className={"bg-white w-[100%] h-[100%] border-black rounded border-2 transition-all duration-150 ease-out p-8 flex border " + (isMobiletDevice() ? "" : "hover:-m-6 hover:border-primary_yellow hover:border-3 hover:shadow-2xl hover:ease-in") + (switchText === 2 && isMobiletDevice() ? "border-primary_yellow border-3 shadow-2xl ease-in" : "")}>
                         {switchText !== 2 && (
                             <div className='flex flex-col justify-end'>
                                 <img

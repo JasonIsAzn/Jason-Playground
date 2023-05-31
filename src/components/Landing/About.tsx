@@ -205,7 +205,7 @@ const About = () => {
                         {/* Image Default Set */}
                         {(item === 0) && (
                             <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-8 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
-                                <div className={"flex flex-wrap justify-center border border-4 rounded-full " + (itemHovered === 0 ? 'border-primary_yellow' : 'border-black hover:border-primary_yellow')}
+                                <div className={"flex flex-wrap justify-center border border-4 rounded-full mx-10 sm:mx-0 " + (itemHovered === 0 ? 'border-primary_yellow' : 'border-black hover:border-primary_yellow')}
                                     onClick={() => resetItemHover(1)}
                                 >
                                     <div className='cursor-pointer'>
@@ -213,7 +213,7 @@ const About = () => {
                                     </div>
                                 </div>
 
-                                <div className={"flex flex-wrap justify-center border border-4 rounded-full " + (itemHovered === 1 ? 'border-primary_yellow' : 'border-black hover:border-primary_yellow')}
+                                <div className={"flex flex-wrap justify-center border border-4 rounded-full mx-10 sm:mx-0 " + (itemHovered === 1 ? 'border-primary_yellow' : 'border-black hover:border-primary_yellow')}
                                     onClick={() => resetItemHover(2)}
                                 >
                                     <div className='cursor-pointer'>
@@ -222,7 +222,7 @@ const About = () => {
                                 </div>
 
 
-                                <div className={"flex flex-wrap justify-center border border-4 rounded-full " + (itemHovered === 2 ? 'border-primary_yellow' : 'border-black hover:border-primary_yellow')}
+                                <div className={"flex flex-wrap justify-center border border-4 rounded-full mx-10 sm:mx-0 " + (itemHovered === 2 ? 'border-primary_yellow' : 'border-black hover:border-primary_yellow')}
                                     onClick={() => resetItemHover(3)}
                                 >
                                     <div className='cursor-pointer'>
@@ -236,51 +236,61 @@ const About = () => {
 
                         {/* Image Anime Set */}
                         {(item === 1) && (
-                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-20 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
+                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-18 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
-                                    <div>
-                                        <img src={require("../../assets/anime_0.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                    <div className='mx-10 sm:mx-0'>
+                                        <div>
+                                            <img src={require("../../assets/anime_0.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                        </div>
+                                        <div className='font-bold text-lg mt-2 sm-mt-6 flex justify-center items-center'>One Piece</div>
                                     </div>
-                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>One Piece</div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
-                                    <div>
-                                        <img src={require("../../assets/anime_1.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                    <div className='mx-10 sm:mx-0'>
+                                        <div>
+                                            <img src={require("../../assets/anime_1.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                        </div>
+                                        <div className='font-bold text-lg mt-2 sm-mt-6 flex justify-center items-center'>Attack on Titan</div>
                                     </div>
-                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Attack on Titan</div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
-                                    <div>
-                                        <img src={require("../../assets/anime_2.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                    <div className='mx-10 sm:mx-0'>
+                                        <div>
+                                            <img src={require("../../assets/anime_2.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
+                                        </div>
+                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Demon Slayer</div>
                                     </div>
-                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Demon Slayer</div>
                                 </div>
                             </div>
                         )}
 
                         {/* Image Music Set */}
                         {(item === 2) && (
-                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-20 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
+                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-18 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
                                     onClick={() => window.open("https://open.spotify.com/artist/5YGY8feqx7naU7z4HrwZM6?si=oHXLf14aRoalpId7U3U71w", "_blank")}
                                 >
-                                    <div>
-                                        <img src={require("../../assets/artist_0.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    <div className='mx-10 sm:mx-0'>
+                                        <div>
+                                            <img src={require("../../assets/artist_0.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                        </div>
+                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Miley Cyrus</div>
                                     </div>
-                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Miley Cyrus</div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
                                     onClick={() => window.open("https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH?si=CVdQ0FvpRuCc8D2G6a6gHw", "_blank")}
                                 >
-                                    <div>
-                                        <img src={require("../../assets/artist_1.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    <div className='mx-10 sm:mx-0'>
+                                        <div>
+                                            <img src={require("../../assets/artist_1.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                        </div>
+                                        <div className='font-bold text-lg mt-2 cursor-pointer flex justify-center items-center'>Artic Monkey</div>
                                     </div>
-                                    <div className='font-bold text-lg sm:-mt-6 cursor-pointer'>Artic Monkey</div>
 
                                 </div>
 
@@ -288,44 +298,52 @@ const About = () => {
                                     onClick={() => window.open("https://open.spotify.com/artist/1U1el3k54VvEUzo3ybLPlM?si=lH67jmlwTWGmj03LKKnUSA", "_blank")}
 
                                 >
-                                    <div>
-                                        <img src={require("../../assets/artist_2.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    <div className='mx-10 sm:mx-0'>
+                                        <div>
+                                            <img src={require("../../assets/artist_2.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                        </div>
+                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Kali Uchis</div>
                                     </div>
-                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Kali Uchis</div>
 
                                 </div>
                             </div>
                         )}
                         {/* Image Gym Set */}
                         {(item === 3) && (
-                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-20 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
+                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-18 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
                                     onClick={() => window.open("https://www.instagram.com/cbum/", "_blank")}
                                 >
-                                    <div>
-                                        <img src={require("../../assets/gym_0.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    <div className='mx-10 sm:mx-0'>
+                                        <div>
+                                            <img src={require("../../assets/gym_0.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                        </div>
+                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Cbum</div>
                                     </div>
-                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Cbum</div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
                                     onClick={() => window.open("https://www.instagram.com/noeldeyzel_bodybuilder/", "_blank")}
 
                                 >
-                                    <div>
-                                        <img src={require("../../assets/gym_1.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    <div className='mx-10 sm:mx-0'>
+                                        <div>
+                                            <img src={require("../../assets/gym_1.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                        </div>
+                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Noel Deyzel</div>
                                     </div>
-                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Noel Deyzel</div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
                                     onClick={() => window.open("https://www.instagram.com/jsrms_19/", "_blank")}
                                 >
-                                    <div>
-                                        <img src={require("../../assets/gym_2.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                    <div className='mx-10 sm:mx-0'>
+                                        <div>
+                                            <img src={require("../../assets/gym_2.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
+                                        </div>
+                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Jesus Ramos</div>
                                     </div>
-                                    <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer'>Jesus Ramos</div>
                                 </div>
                             </div>
                         )}
