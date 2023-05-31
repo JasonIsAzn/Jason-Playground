@@ -34,7 +34,7 @@ const Contact = () => {
 
                 {/* Contact Methods */}
                 {!open && (
-                    < div className="col-span-12 flex flex-col sm:flex-row sm:flex-wrap justify-center items-center sm:space-x-10 my-48 text-3xl font-semibold m-8">
+                    < div className="col-span-12 flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:flex-wrap justify-center items-center sm:space-x-10 my-48 text-3xl font-semibold m-8">
 
                         <button
                             className='flex hover:lg:text-4xl'
