@@ -12,10 +12,13 @@ const responsive = {
     1024: { items: 3 },
 };
 
+
+
 const anime_items = [
     <div
         className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
     >
         <div className="flex flex-col items-center justify-center h-48 mx-5">
             <img alt="anime 0" src={require("../../assets/anime_0.jpg")}></img>
@@ -25,7 +28,9 @@ const anime_items = [
 
     <div
         className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
+
     >
         <div className="flex flex-col items-center justify-center h-48 mx-5">
             <img alt="anime 1" src={require("../../assets/anime_1.jpg")}></img>
@@ -35,7 +40,8 @@ const anime_items = [
 
     <div
         className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
     >
         <div className="flex flex-col items-center justify-center h-48 mx-5">
             <img alt="anime 2" src={require("../../assets/anime_2.png")}></img>
@@ -43,12 +49,171 @@ const anime_items = [
         </div>
     </div>,
     <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px]px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
     >
         <div className="flex flex-col items-center justify-center h-48 mx-5">
             <img alt="anime 3" src={require("../../assets/anime_2.png")}></img>
             <p className='font-bold mt-8 text-white text-xl'>Anime 3</p>
+        </div>
+    </div>,
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="anime 3" src={require("../../assets/anime_2.png")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>Anime 4</p>
+        </div>
+    </div>,
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="anime 3" src={require("../../assets/anime_2.png")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>Anime 5</p>
+        </div>
+    </div>,
+];
+
+const artist_items = [
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://open.spotify.com/artist/5YGY8feqx7naU7z4HrwZM6?si=oHXLf14aRoalpId7U3U71w", "_blank")}
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="artist 0" src={require("../../assets/artist_0.png")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>Miley Cyrus</p>
+        </div>
+    </div>,
+
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH?si=CVdQ0FvpRuCc8D2G6a6gHw", "_blank")}
+
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="artist 1" src={require("../../assets/artist_1.png")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>Artic Monkey</p>
+        </div>
+    </div>,
+
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://open.spotify.com/artist/1U1el3k54VvEUzo3ybLPlM?si=lH67jmlwTWGmj03LKKnUSA", "_blank")}
+
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="artist 2" src={require("../../assets/artist_2.png")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>Kali Uchis</p>
+        </div>
+    </div>,
+
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("", "_blank")}
+
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="artist 3" src={require("../../assets/artist_2.png")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>artist 3</p>
+        </div>
+    </div>,
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("", "_blank")}
+
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="artist 4" src={require("../../assets/artist_2.png")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>artist 4</p>
+        </div>
+    </div>,
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("", "_blank")}
+
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="artist 5" src={require("../../assets/artist_2.png")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>artist 5</p>
+        </div>
+    </div>,
+];
+
+const gym_items = [
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://www.instagram.com/cbum/", "_blank")}
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="gym 0" src={require("../../assets/gym_0.jpg")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>Cbum</p>
+        </div>
+    </div>,
+
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://www.instagram.com/noeldeyzel_bodybuilder/", "_blank")}
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="gym 1" src={require("../../assets/gym_1.jpg")}></img>
+            <p className='font-bold mt-8 text-white text-xl'> Noel Deyzel</p>
+        </div>
+    </div>,
+
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("https://www.instagram.com/jsrms_19/", "_blank")}
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="gym 2" src={require("../../assets/gym_2.jpg")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>Jesus Ramos</p>
+        </div>
+    </div>,
+
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("", "_blank")}
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="gym 3" src={require("../../assets/gym_0.jpg")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>gym 3</p>
+        </div>
+    </div>,
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("", "_blank")}
+
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="gym 4" src={require("../../assets/gym_0.jpg")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>gym 4</p>
+        </div>
+    </div>,
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+        onClick={() => window.open("", "_blank")}
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="gym 5" src={require("../../assets/gym_0.jpg")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>gym 5</p>
         </div>
     </div>,
 ];
@@ -99,40 +264,40 @@ const About = () => {
         return classes.filter(Boolean).join(' ')
     }
 
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [items] = useState(anime_items);
+    const [anime_activeIndex, anime_setActiveIndex] = useState(0);
+    const [animeitems] = useState(anime_items);
 
-    const slidePrev = () => {
-        if (activeIndex === 0) return;
-        setActiveIndex(activeIndex - 1);
+    const anime_slidePrev = () => {
+        if (anime_activeIndex === 0) return;
+        anime_setActiveIndex(anime_activeIndex - 1);
     }
-    const slideNext = () => {
+    const anime_slideNext = () => {
         let offset = 1;
         if (window.innerWidth >= 1024) {
             offset = 3;
         } else if (window.innerWidth > 640) {
             offset = 2;
         }
-        if (activeIndex === items.length - offset) return;
-        setActiveIndex(activeIndex + 1);
+        if (anime_activeIndex === animeitems.length - offset) return;
+        anime_setActiveIndex(anime_activeIndex + 1);
     }
 
-    const onArrowHover = (direction: string) => {
+    const anime_onArrowHover = (direction: string) => {
         const arrow = document.getElementById(`${direction}-arrow`);
         if (arrow != null) {
             if (direction === 'left') {
-                console.log(activeIndex)
-                if (activeIndex === 0) return;
+                console.log(anime_activeIndex)
+                if (anime_activeIndex === 0) return;
                 arrow.setAttribute('class', arrow.className.replace('border-r-white', 'border-r-primary_yellow'))
             } else {
-                console.log(activeIndex)
-                if (activeIndex === items.length - 3) return;
+                console.log(anime_activeIndex)
+                if (anime_activeIndex === animeitems.length - 3) return;
                 arrow.setAttribute('class', arrow.className.replace('border-l-white', 'border-l-primary_yellow'))
             }
         }
     }
 
-    const offArrowHover = (direction: string) => {
+    const anime_offArrowHover = (direction: string) => {
         const arrow = document.getElementById(`${direction}-arrow`);
         if (arrow != null) {
             if (direction === 'left') {
@@ -143,7 +308,102 @@ const About = () => {
         }
     }
 
-    const syncActiveIndex = ({ item }: any) => setActiveIndex(item);
+    const anime_syncActiveIndex = ({ item }: any) => anime_setActiveIndex(item);
+
+
+    const [music_activeIndex, music_setActiveIndex] = useState(0);
+    const [musicitems] = useState(artist_items);
+
+    const music_slidePrev = () => {
+        if (music_activeIndex === 0) return;
+        music_setActiveIndex(music_activeIndex - 1);
+    }
+    const music_slideNext = () => {
+        let offset = 1;
+        if (window.innerWidth >= 1024) {
+            offset = 3;
+        } else if (window.innerWidth > 640) {
+            offset = 2;
+        }
+        if (music_activeIndex === musicitems.length - offset) return;
+        music_setActiveIndex(music_activeIndex + 1);
+    }
+
+    const music_onArrowHover = (direction: string) => {
+        const arrow = document.getElementById(`${direction}-arrow`);
+        if (arrow != null) {
+            if (direction === 'left') {
+                console.log(music_activeIndex)
+                if (music_activeIndex === 0) return;
+                arrow.setAttribute('class', arrow.className.replace('border-r-white', 'border-r-primary_yellow'))
+            } else {
+                console.log(music_activeIndex)
+                if (music_activeIndex === musicitems.length - 3) return;
+                arrow.setAttribute('class', arrow.className.replace('border-l-white', 'border-l-primary_yellow'))
+            }
+        }
+    }
+
+    const music_offArrowHover = (direction: string) => {
+        const arrow = document.getElementById(`${direction}-arrow`);
+        if (arrow != null) {
+            if (direction === 'left') {
+                arrow.setAttribute('class', arrow.className.replace('border-r-primary_yellow', 'border-r-white'))
+            } else {
+                arrow.setAttribute('class', arrow.className.replace('border-l-primary_yellow', 'border-l-white'))
+            }
+        }
+    }
+
+    const music_syncActiveIndex = ({ item }: any) => music_setActiveIndex(item);
+
+
+    const [gym_activeIndex, gym_setActiveIndex] = useState(0);
+    const [gymitems] = useState(gym_items);
+
+    const gym_slidePrev = () => {
+        if (gym_activeIndex === 0) return;
+        gym_setActiveIndex(gym_activeIndex - 1);
+    }
+    const gym_slideNext = () => {
+        let offset = 1;
+        if (window.innerWidth >= 1024) {
+            offset = 3;
+        } else if (window.innerWidth > 640) {
+            offset = 2;
+        }
+        if (gym_activeIndex === gymitems.length - offset) return;
+        gym_setActiveIndex(gym_activeIndex + 1);
+    }
+
+    const gym_onArrowHover = (direction: string) => {
+        const arrow = document.getElementById(`${direction}-arrow`);
+        if (arrow != null) {
+            if (direction === 'left') {
+                console.log(gym_activeIndex)
+                if (gym_activeIndex === 0) return;
+                arrow.setAttribute('class', arrow.className.replace('border-r-white', 'border-r-primary_yellow'))
+            } else {
+                console.log(gym_activeIndex)
+                if (gym_activeIndex === gymitems.length - 3) return;
+                arrow.setAttribute('class', arrow.className.replace('border-l-white', 'border-l-primary_yellow'))
+            }
+        }
+    }
+
+    const gym_offArrowHover = (direction: string) => {
+        const arrow = document.getElementById(`${direction}-arrow`);
+        if (arrow != null) {
+            if (direction === 'left') {
+                arrow.setAttribute('class', arrow.className.replace('border-r-primary_yellow', 'border-r-white'))
+            } else {
+                arrow.setAttribute('class', arrow.className.replace('border-l-primary_yellow', 'border-l-white'))
+            }
+        }
+    }
+
+    const gym_syncActiveIndex = ({ item }: any) => gym_setActiveIndex(item);
+
 
     return (
         <div id="section-about" className='p-2 h-full pb-24 bg-[#F5F5F5]'>
@@ -173,7 +433,9 @@ const About = () => {
                         <img src={require("../../assets/profile.jpg")} alt="profile" className="rounded-full" />
                     </div>
                 </div>
-                <div ref={expandRef}></div>
+                <div className="my-2 invisible" >_</div>
+                <div className="invisible" ref={expandRef}>_</div>
+
                 {/* Expanded Section */}
                 {open && (
                     <div className='col-span-11 col-start-2'>
@@ -288,7 +550,7 @@ const About = () => {
                                 </Transition>
 
                                 <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 0 ? "" : "hidden")}>about my personal interest</span>
-                                <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 1 ? "" : "hidden")}>that I'm currently watching and enjoy.</span>
+                                <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 1 ? "" : "hidden")}>that I'm currently watching and my favorites.</span>
                                 <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 2 ? "" : "hidden")}>that I'm obsessed with.</span>
                                 <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 3 ? "" : "hidden")}>rats that inspire me.</span>
                             </Menu>
@@ -339,106 +601,90 @@ const About = () => {
                                     mouseTracking
                                     disableDotsControls
                                     disableButtonsControls
-                                    items={items}
-                                    activeIndex={activeIndex}
+                                    items={animeitems}
+                                    activeIndex={anime_activeIndex}
                                     responsive={responsive}
-                                    onSlideChanged={syncActiveIndex}
+                                    onSlideChanged={anime_syncActiveIndex}
                                 />
                                 <div className="flex flex-row b-refs-buttons m-2">
 
                                     <button className="h-0 w-0 border-y-8 border-y-transparent border-r-[16px] border-r-white mx-2"
                                         id='left-arrow'
-                                        onMouseOver={() => onArrowHover('left')}
-                                        onMouseOut={() => offArrowHover('left')}
-                                        onClick={slidePrev}></button>
+                                        onMouseOver={() => anime_onArrowHover('left')}
+                                        onMouseOut={() => anime_offArrowHover('left')}
+                                        onClick={anime_slidePrev}></button>
                                     <button className="h-0 w-0 border-y-8 border-y-transparent border-l-[16px] border-l-white mx-2 "
                                         id='right-arrow'
-                                        onMouseOver={() => onArrowHover('right')}
-                                        onMouseOut={() => offArrowHover('right')}
-                                        onClick={slideNext}></button>
+                                        onMouseOver={() => anime_onArrowHover('right')}
+                                        onMouseOut={() => anime_offArrowHover('right')}
+                                        onClick={anime_slideNext}></button>
                                 </div>
-
-
                             </div>
                         )}
 
                         {/* Image Music Set */}
                         {(item === 2) && (
-                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-18 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
+                            <div className='flex flex-col rounded-md justify-center items-center mt-8 mb-24 pt-12 px-12 mr-8 sm:mr-12 md:mr-20 lg:mr-28
+                            bg-gradient-to-r 
+                            from-primary_yellow
+                            to-primary_yellow
+                            via-slate-500
+                            animate-gradient-xy'
+                            >
+                                <AliceCarousel
+                                    mouseTracking
+                                    disableDotsControls
+                                    disableButtonsControls
+                                    items={musicitems}
+                                    activeIndex={music_activeIndex}
+                                    responsive={responsive}
+                                    onSlideChanged={music_syncActiveIndex}
+                                />
+                                <div className="flex flex-row b-refs-buttons m-2">
 
-                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
-                                    onClick={() => window.open("https://open.spotify.com/artist/5YGY8feqx7naU7z4HrwZM6?si=oHXLf14aRoalpId7U3U71w", "_blank")}
-                                >
-                                    <div className='mx-10 sm:mx-0'>
-                                        <div>
-                                            <img src={require("../../assets/artist_0.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
-                                        </div>
-                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Miley Cyrus</div>
-                                    </div>
-                                </div>
-
-                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
-                                    onClick={() => window.open("https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH?si=CVdQ0FvpRuCc8D2G6a6gHw", "_blank")}
-                                >
-                                    <div className='mx-10 sm:mx-0'>
-                                        <div>
-                                            <img src={require("../../assets/artist_1.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
-                                        </div>
-                                        <div className='font-bold text-lg mt-2 cursor-pointer flex justify-center items-center'>Artic Monkey</div>
-                                    </div>
-
-                                </div>
-
-                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
-                                    onClick={() => window.open("https://open.spotify.com/artist/1U1el3k54VvEUzo3ybLPlM?si=lH67jmlwTWGmj03LKKnUSA", "_blank")}
-
-                                >
-                                    <div className='mx-10 sm:mx-0'>
-                                        <div>
-                                            <img src={require("../../assets/artist_2.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
-                                        </div>
-                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Kali Uchis</div>
-                                    </div>
-
+                                    <button className="h-0 w-0 border-y-8 border-y-transparent border-r-[16px] border-r-white mx-2"
+                                        id='left-arrow'
+                                        onMouseOver={() => music_onArrowHover('left')}
+                                        onMouseOut={() => music_offArrowHover('left')}
+                                        onClick={music_slidePrev}></button>
+                                    <button className="h-0 w-0 border-y-8 border-y-transparent border-l-[16px] border-l-white mx-2 "
+                                        id='right-arrow'
+                                        onMouseOver={() => music_onArrowHover('right')}
+                                        onMouseOut={() => music_offArrowHover('right')}
+                                        onClick={music_slideNext}></button>
                                 </div>
                             </div>
                         )}
                         {/* Image Gym Set */}
                         {(item === 3) && (
-                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-18 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
+                            <div className='flex flex-col rounded-md justify-center items-center mt-8 mb-24 pt-12 px-12 mr-8 sm:mr-12 md:mr-20 lg:mr-28
+                            bg-gradient-to-r 
+                            from-primary_yellow
+                            to-primary_yellow
+                            via-slate-500
+                            animate-gradient-xy'
+                            >
+                                <AliceCarousel
+                                    mouseTracking
+                                    disableDotsControls
+                                    disableButtonsControls
+                                    items={gymitems}
+                                    activeIndex={gym_activeIndex}
+                                    responsive={responsive}
+                                    onSlideChanged={gym_syncActiveIndex}
+                                />
+                                <div className="flex flex-row b-refs-buttons m-2">
 
-                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
-                                    onClick={() => window.open("https://www.instagram.com/cbum/", "_blank")}
-                                >
-                                    <div className='mx-10 sm:mx-0'>
-                                        <div>
-                                            <img src={require("../../assets/gym_0.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
-                                        </div>
-                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Cbum</div>
-                                    </div>
-                                </div>
-
-                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
-                                    onClick={() => window.open("https://www.instagram.com/noeldeyzel_bodybuilder/", "_blank")}
-
-                                >
-                                    <div className='mx-10 sm:mx-0'>
-                                        <div>
-                                            <img src={require("../../assets/gym_1.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
-                                        </div>
-                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Noel Deyzel</div>
-                                    </div>
-                                </div>
-
-                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]"
-                                    onClick={() => window.open("https://www.instagram.com/jsrms_19/", "_blank")}
-                                >
-                                    <div className='mx-10 sm:mx-0'>
-                                        <div>
-                                            <img src={require("../../assets/gym_2.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none cursor-pointer" />
-                                        </div>
-                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Jesus Ramos</div>
-                                    </div>
+                                    <button className="h-0 w-0 border-y-8 border-y-transparent border-r-[16px] border-r-white mx-2"
+                                        id='left-arrow'
+                                        onMouseOver={() => gym_onArrowHover('left')}
+                                        onMouseOut={() => gym_offArrowHover('left')}
+                                        onClick={gym_slidePrev}></button>
+                                    <button className="h-0 w-0 border-y-8 border-y-transparent border-l-[16px] border-l-white mx-2 "
+                                        id='right-arrow'
+                                        onMouseOver={() => gym_onArrowHover('right')}
+                                        onMouseOut={() => gym_offArrowHover('right')}
+                                        onClick={gym_slideNext}></button>
                                 </div>
                             </div>
                         )}
