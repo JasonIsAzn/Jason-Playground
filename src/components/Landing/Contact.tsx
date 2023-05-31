@@ -48,8 +48,6 @@ const Contact = () => {
                                 className='space-x-4'>
                                 <FontAwesomeIcon size={over === 0 ? "lg" : "1x"}
                                     icon={faEnvelope} />
-
-
                             </a>
                         </button>
 

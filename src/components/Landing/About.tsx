@@ -2,8 +2,56 @@ import { useState, useRef } from 'react'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { Ripple, initTE } from "tw-elements";
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 initTE({ Ripple });
+const responsive = {
+    0: { items: 1 },
+    640: { items: 2 },
+    1024: { items: 3 },
+};
+
+const anime_items = [
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-36 px-4 mx-16
+      transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="anime 0" src={require("../../assets/anime_0.jpg")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>One Piece</p>
+        </div>
+    </div>,
+
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-36 px-4 mx-4
+  transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="anime 1" src={require("../../assets/anime_1.jpg")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>Attack on Titan</p>
+        </div>
+    </div>,
+
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-36 px-4 mx-4
+  transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="anime 2" src={require("../../assets/anime_2.png")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>Demon Slayer</p>
+        </div>
+    </div>,
+    <div
+        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-36 px-4 mx-4
+transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90"
+    >
+        <div className="flex flex-col items-center justify-center h-48 mx-5">
+            <img alt="anime 3" src={require("../../assets/anime_2.png")}></img>
+            <p className='font-bold mt-8 text-white text-xl'>Anime 3</p>
+        </div>
+    </div>,
+];
 
 const About = () => {
     const [isHovered, setIsHovered] = useState(false); // button hover
@@ -18,7 +66,6 @@ const About = () => {
 
         return isMobile ? true : false;
     }
-
 
     var collapseRef = useRef<null | HTMLDivElement>(null);
     var expandRef = useRef<null | HTMLDivElement>(null);
@@ -52,6 +99,51 @@ const About = () => {
         return classes.filter(Boolean).join(' ')
     }
 
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [items] = useState(anime_items);
+
+    const slidePrev = () => {
+        if (activeIndex === 0) return;
+        setActiveIndex(activeIndex - 1);
+    }
+    const slideNext = () => {
+        let offset = 1;
+        if (window.innerWidth >= 1024) {
+            offset = 3;
+        } else if (window.innerWidth > 640) {
+            offset = 2;
+        }
+        if (activeIndex === items.length - offset) return;
+        setActiveIndex(activeIndex + 1);
+    }
+
+    const onArrowHover = (direction: string) => {
+        const arrow = document.getElementById(`${direction}-arrow`);
+        if (arrow != null) {
+            if (direction === 'left') {
+                console.log(activeIndex)
+                if (activeIndex === 0) return;
+                arrow.setAttribute('class', arrow.className.replace('border-r-white', 'border-r-primary_yellow'))
+            } else {
+                console.log(activeIndex)
+                if (activeIndex === items.length - 3) return;
+                arrow.setAttribute('class', arrow.className.replace('border-l-white', 'border-l-primary_yellow'))
+            }
+        }
+    }
+
+    const offArrowHover = (direction: string) => {
+        const arrow = document.getElementById(`${direction}-arrow`);
+        if (arrow != null) {
+            if (direction === 'left') {
+                arrow.setAttribute('class', arrow.className.replace('border-r-primary_yellow', 'border-r-white'))
+            } else {
+                arrow.setAttribute('class', arrow.className.replace('border-l-primary_yellow', 'border-l-white'))
+            }
+        }
+    }
+
+    const syncActiveIndex = ({ item }: any) => setActiveIndex(item);
 
     return (
         <div id="section-about" className='p-2 h-full pb-24 bg-[#F5F5F5]'>
@@ -236,34 +328,37 @@ const About = () => {
 
                         {/* Image Anime Set */}
                         {(item === 1) && (
-                            <div className='col-span-10 col-start-2 flex flex-col sm:flex-row justify-center items-center mt-24 space-y-18 sm:space-y-0 sm:space-x-16 mx-16 sm:mx-32 lg:mx-[250px]'>
+                            <div className='flex flex-col rounded-md justify-center items-center mt-8 mb-24 pt-12 px-12 
+                            bg-gradient-to-r 
+                            from-primary_yellow
+                            to-primary_yellow
+                            via-slate-500
+                            animate-gradient-xy'
+                            >
+                                <AliceCarousel
+                                    mouseTracking
+                                    disableDotsControls
+                                    disableButtonsControls
+                                    items={items}
+                                    activeIndex={activeIndex}
+                                    responsive={responsive}
+                                    onSlideChanged={syncActiveIndex}
+                                />
+                                <div className="flex flex-row b-refs-buttons m-2">
 
-                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
-                                    <div className='mx-10 sm:mx-0'>
-                                        <div>
-                                            <img src={require("../../assets/anime_0.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
-                                        </div>
-                                        <div className='font-bold text-lg mt-2 sm-mt-6 flex justify-center items-center'>One Piece</div>
-                                    </div>
+                                    <button className="h-0 w-0 border-y-8 border-y-transparent border-r-[16px] border-r-white mx-2"
+                                        id='left-arrow'
+                                        onMouseOver={() => onArrowHover('left')}
+                                        onMouseOut={() => offArrowHover('left')}
+                                        onClick={slidePrev}></button>
+                                    <button className="h-0 w-0 border-y-8 border-y-transparent border-l-[16px] border-l-white mx-2 "
+                                        id='right-arrow'
+                                        onMouseOver={() => onArrowHover('right')}
+                                        onMouseOut={() => offArrowHover('right')}
+                                        onClick={slideNext}></button>
                                 </div>
 
-                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
-                                    <div className='mx-10 sm:mx-0'>
-                                        <div>
-                                            <img src={require("../../assets/anime_1.jpg")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
-                                        </div>
-                                        <div className='font-bold text-lg mt-2 sm-mt-6 flex justify-center items-center'>Attack on Titan</div>
-                                    </div>
-                                </div>
 
-                                <div className="flex flex-wrap justify-center rounded-full w-[300px] h-[300px]">
-                                    <div className='mx-10 sm:mx-0'>
-                                        <div>
-                                            <img src={require("../../assets/anime_2.png")} alt="..." className="rounded-full max-w-full h-auto align-middle border-none" />
-                                        </div>
-                                        <div className='font-bold text-lg mt-2 sm-mt-6 cursor-pointer flex justify-center items-center'>Demon Slayer</div>
-                                    </div>
-                                </div>
                             </div>
                         )}
 
