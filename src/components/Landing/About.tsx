@@ -6,219 +6,218 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 initTE({ Ripple });
-const responsive = {
-    0: { items: 1 },
-    700: { items: 2 },
-    1024: { items: 3 },
-};
-
-
-
-const anime_items = [
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="anime 0" src={require("../../assets/anime_0.jpg")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>One Piece</p>
-        </div>
-    </div>,
-
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
-
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="anime 1" src={require("../../assets/anime_1.jpg")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>Attack on Titan</p>
-        </div>
-    </div>,
-
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="anime 2" src={require("../../assets/anime_2.png")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>Demon Slayer</p>
-        </div>
-    </div>,
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="anime 3" src={require("../../assets/anime_2.png")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>Anime 3</p>
-        </div>
-    </div>,
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="anime 3" src={require("../../assets/anime_2.png")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>Anime 4</p>
-        </div>
-    </div>,
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="anime 3" src={require("../../assets/anime_2.png")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>Anime 5</p>
-        </div>
-    </div>,
-];
-
-const artist_items = [
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://open.spotify.com/artist/5YGY8feqx7naU7z4HrwZM6?si=oHXLf14aRoalpId7U3U71w", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="artist 0" src={require("../../assets/artist_0.png")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>Miley Cyrus</p>
-        </div>
-    </div>,
-
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH?si=CVdQ0FvpRuCc8D2G6a6gHw", "_blank")}
-
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="artist 1" src={require("../../assets/artist_1.png")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>Artic Monkey</p>
-        </div>
-    </div>,
-
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://open.spotify.com/artist/1U1el3k54VvEUzo3ybLPlM?si=lH67jmlwTWGmj03LKKnUSA", "_blank")}
-
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="artist 2" src={require("../../assets/artist_2.png")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>Kali Uchis</p>
-        </div>
-    </div>,
-
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("", "_blank")}
-
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="artist 3" src={require("../../assets/artist_2.png")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>artist 3</p>
-        </div>
-    </div>,
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("", "_blank")}
-
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="artist 4" src={require("../../assets/artist_2.png")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>artist 4</p>
-        </div>
-    </div>,
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("", "_blank")}
-
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="artist 5" src={require("../../assets/artist_2.png")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>artist 5</p>
-        </div>
-    </div>,
-];
-
-const gym_items = [
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://www.instagram.com/cbum/", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="gym 0" src={require("../../assets/gym_0.jpg")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>Cbum</p>
-        </div>
-    </div>,
-
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://www.instagram.com/noeldeyzel_bodybuilder/", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="gym 1" src={require("../../assets/gym_1.jpg")}></img>
-            <p className='font-bold mt-8 text-white text-xl'> Noel Deyzel</p>
-        </div>
-    </div>,
-
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("https://www.instagram.com/jsrms_19/", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="gym 2" src={require("../../assets/gym_2.jpg")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>Jesus Ramos</p>
-        </div>
-    </div>,
-
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="gym 3" src={require("../../assets/gym_0.jpg")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>gym 3</p>
-        </div>
-    </div>,
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("", "_blank")}
-
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="gym 4" src={require("../../assets/gym_0.jpg")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>gym 4</p>
-        </div>
-    </div>,
-    <div
-        className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-        onClick={() => window.open("", "_blank")}
-    >
-        <div className="flex flex-col items-center justify-center h-48 mx-5">
-            <img alt="gym 5" src={require("../../assets/gym_0.jpg")}></img>
-            <p className='font-bold mt-8 text-white text-xl'>gym 5</p>
-        </div>
-    </div>,
-];
 
 const About = () => {
+    const responsive = {
+        0: { items: 1 },
+        700: { items: 2 },
+        1024: { items: 3 },
+    };
+
+    let anime_items = [
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img id="image" alt="anime 0" src={require("../../assets/anime_0.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>One Piece</p>
+            </div>
+        </div>,
+
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
+
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="anime 1" src={require("../../assets/anime_1.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Attack on Titan</p>
+            </div>
+        </div>,
+
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="anime 2" src={require("../../assets/anime_2.png")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Demon Slayer</p>
+            </div>
+        </div>,
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="anime 3" src={require("../../assets/anime_3.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Steins;Gate</p>
+            </div>
+        </div>,
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+        transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="anime 4" src={require("../../assets/anime_4.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>JoJo's Bizarre Adventure</p>
+            </div>
+        </div>,
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://myanimelist.net/animelist/Jason_LV", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="anime 5" src={require("../../assets/anime_5.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Naruto</p>
+            </div>
+        </div>,
+    ];
+
+    const artist_items = [
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://open.spotify.com/artist/5YGY8feqx7naU7z4HrwZM6?si=oHXLf14aRoalpId7U3U71w", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="artist 0" src={require("../../assets/artist_0.png")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Miley Cyrus</p>
+            </div>
+        </div>,
+
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH?si=CVdQ0FvpRuCc8D2G6a6gHw", "_blank")}
+
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="artist 1" src={require("../../assets/artist_1.png")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Artic Monkey</p>
+            </div>
+        </div>,
+
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://open.spotify.com/artist/1U1el3k54VvEUzo3ybLPlM?si=lH67jmlwTWGmj03LKKnUSA", "_blank")}
+
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="artist 2" src={require("../../assets/artist_2.png")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Kali Uchis</p>
+            </div>
+        </div>,
+
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("", "_blank")}
+
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="artist 3" src={require("../../assets/artist_3.png")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Eminem</p>
+            </div>
+        </div>,
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("", "_blank")}
+
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="artist 4" src={require("../../assets/artist_4.png")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Lana Del Rey</p>
+            </div>
+        </div>,
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("", "_blank")}
+
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="artist 5" src={require("../../assets/artist_5.png")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Joji</p>
+            </div>
+        </div>,
+    ];
+
+    const gym_items = [
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://www.instagram.com/cbum/", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="gym 0" src={require("../../assets/gym_0.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Cbum</p>
+            </div>
+        </div>,
+
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://www.instagram.com/noeldeyzel_bodybuilder/", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="gym 1" src={require("../../assets/gym_1.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'> Noel Deyzel</p>
+            </div>
+        </div>,
+
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+            transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("https://www.instagram.com/jsrms_19/", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="gym 2" src={require("../../assets/gym_2.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>Jesus Ramos</p>
+            </div>
+        </div>,
+
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="gym 3" src={require("../../assets/gym_0.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>gym 3</p>
+            </div>
+        </div>,
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("", "_blank")}
+
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="gym 4" src={require("../../assets/gym_0.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>gym 4</p>
+            </div>
+        </div>,
+        <div
+            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
+    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
+            onClick={() => window.open("", "_blank")}
+        >
+            <div className="flex flex-col items-center justify-center h-48 mx-5">
+                <img alt="gym 5" src={require("../../assets/gym_0.jpg")}></img>
+                <p className='font-bold mt-8 text-white text-xl'>gym 5</p>
+            </div>
+        </div>,
+    ];
+
     const [isHovered, setIsHovered] = useState(false); // button hover
     const [open, setOpen] = useState(false); // If expanded is open
     const [item, setItem] = useState(0); // item chosen in expanded section
@@ -405,6 +404,8 @@ const About = () => {
     const gym_syncActiveIndex = ({ item }: any) => gym_setActiveIndex(item);
 
 
+
+
     return (
         <div id="section-about" className='p-2 h-full pb-24 bg-[#F5F5F5]'>
             <div className="grid grid-cols-12">
@@ -552,7 +553,7 @@ const About = () => {
                                 <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 0 ? "" : "hidden")}>about my personal interest</span>
                                 <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 1 ? "" : "hidden")}>that I'm currently watching and my favorites.</span>
                                 <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 2 ? "" : "hidden")}>that I'm obsessed with.</span>
-                                <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 3 ? "" : "hidden")}>rats that inspire me.</span>
+                                <span className={"text-2xl md:text-4xl lg:text-4xl " + (item === 3 ? "" : "hidden")}>rats that inspired my on fitness journey.</span>
                             </Menu>
                         </div>
 
