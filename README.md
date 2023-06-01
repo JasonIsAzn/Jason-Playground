@@ -1,3 +1,7 @@
+# 6/1 - Halting Project
+
+I'm happy where I left off, look at issues to see what needs to be done.
+
 # Basic System Informations
 
 npm: 9.6.6
