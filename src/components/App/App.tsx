@@ -1,16 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "../Landing/LandingPage"
-import Test from "../../tests/Test"
 
+
+// Routers not really nessesary for this project, but I wanted to try out different routing methods
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage />,
 
-  },
-  {
-    path: "/test",
-    element: <Test />,
   }
 ]);
 
