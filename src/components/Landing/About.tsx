@@ -185,38 +185,6 @@ const About = () => {
                 <p className='font-bold mt-8 text-white text-xl'>Jesus Ramos</p>
             </div>
         </div>,
-
-        <div
-            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-            onClick={() => window.open("", "_blank")}
-        >
-            <div className="flex flex-col items-center justify-center h-48 mx-5">
-                <img alt="gym 3" src={require("../../assets/gym_0.jpg")}></img>
-                <p className='font-bold mt-8 text-white text-xl'>gym 3</p>
-            </div>
-        </div>,
-        <div
-            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-            onClick={() => window.open("", "_blank")}
-
-        >
-            <div className="flex flex-col items-center justify-center h-48 mx-5">
-                <img alt="gym 4" src={require("../../assets/gym_0.jpg")}></img>
-                <p className='font-bold mt-8 text-white text-xl'>gym 4</p>
-            </div>
-        </div>,
-        <div
-            className="flex flex-col justify-center items-center bg-grey-yellow-5 bg-opacity-70 rounded-xl py-[90px] xs:py-[170px] sm:py-[180px] px-4 mx-4
-    transform transition duration-500 scale-95 hover:scale-100 hover:bg-opacity-90 cursor-pointer"
-            onClick={() => window.open("", "_blank")}
-        >
-            <div className="flex flex-col items-center justify-center h-48 mx-5">
-                <img alt="gym 5" src={require("../../assets/gym_0.jpg")}></img>
-                <p className='font-bold mt-8 text-white text-xl'>gym 5</p>
-            </div>
-        </div>,
     ];
 
     const [isHovered, setIsHovered] = useState(false);
@@ -426,7 +394,7 @@ const About = () => {
 
                     <p> I learn by working on side projects with friends. I have a passion for software engineering, web development, and teaching. I'm currently learning app development, machine learning, and cyber security.</p>
 
-                    <p> I enjoy listening to music, watching anime, and working out </p>
+                    <p> I enjoy listening to music, watching anime, and fitness </p>
                 </div>
 
                 {/* Profile Image */}

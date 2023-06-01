@@ -34,7 +34,7 @@ const resume_content = [
     {
         title: 'Experience',
         content:
-            <div className='flex flex-colfont-base text-xl'>
+            <div className='flex flex-col font-base text-xl space-y-6'>
                 <div>Undergraduate Teaching Fellow —Shell Engineering Foundations Lab, College Station, TX</div>
                 <div>TA for ENGR 102/216/217/, Part-Time, August 2021 — Current</div>
 
@@ -250,15 +250,13 @@ const Resume = () => {
                     </a>
                     {/* Button */}
                     <div className={"flex items-center cursor-pointer " + (globalContext.resumeOpen ? 'justify-end mr-8' : 'justify-center my-32 mb-12 lg:mb-32 sm:mr-[100px] lg:mr-[300px]')}>
-                        <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (isMobiletDevice() ? '' : (globalContext.resumeOpen ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))}
+                        <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 mt-8" + (isMobiletDevice() ? '' : (globalContext.resumeOpen ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))}
                             onMouseEnter={() => onMouseHover(true)}
                             onMouseLeave={() => onMouseHover(false)}
                             onClick={() => collapseSection()}
                         >
                             {globalContext.resumeOpen ? (
-                                <div className='text-white font-semibold '>
-                                    -
-                                </div>
+                                <div className='text-white font-semibold'>-</div>
                             ) : (
                                 <div className='flex overflow-hidden whitespace-nowrap text-white text-lg cursor-pointer'>
                                     {isHovered ? (isMobiletDevice() ? '+' : 'the whole resume') : '+'}
