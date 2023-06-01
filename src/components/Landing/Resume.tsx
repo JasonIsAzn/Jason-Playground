@@ -31,7 +31,16 @@ const resume_content = [
             </div>
     },
 
-    { title: 'Experience', content: 'TB' },
+    {
+        title: 'Experience',
+        content:
+            <div className='flex flex-colfont-base text-xl'>
+                <div>Undergraduate Teaching Fellow —Shell Engineering Foundations Lab, College Station, TX</div>
+                <div>TA for ENGR 102/216/217/, Part-Time, August 2021 — Current</div>
+
+
+            </div>
+    },
 ]
 
 const Resume = () => {
@@ -201,7 +210,7 @@ const Resume = () => {
                                 <div className='col-span-6 flex underline text-2xl sm:text-4xl mb-4'>Work Experience</div>
                                 <div>
                                     <p className='font-bold text-xl sm:text-2xl flex flex-row'>Undergraduate Teaching Fellow — <span className='hidden xl:block'><img className="ml-2 h-10 w-10 mx-2" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span> Shell Engineering Foundations Lab, College Station, TX</p>
-                                    <p className='font-base text-xl flex flex-row'>Lab TA for ENGR 102/216/217/, Part-Time, August 2021 <span className='hidden sm:block xl:hidden'><img className="h-10 w-10 mx-2" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span>— Current</p>
+                                    <p className='font-base text-xl flex flex-row'>TA for ENGR 102/216/217/, Part-Time, August 2021 <span className='hidden sm:block xl:hidden'><img className="h-10 w-10 mx-2" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span>— Current</p>
                                     <span className='flex w-full justify-center items-center sm:hidden'><img className="h-10 w-10" alt="tamu" src={require("../../assets/TAM-Logo.png")}></img></span>
                                     <div className='list-dics mt-2 font-base text-xl'>
                                         <li>Teaching electromagnetism & electromechanical systems to freshman/sophomore engineering students</li>
