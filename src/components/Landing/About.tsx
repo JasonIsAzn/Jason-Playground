@@ -1,9 +1,10 @@
-import { useState, useRef } from 'react'
+import { useState, useContext, useRef } from 'react'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { Ripple, initTE } from "tw-elements";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import GlobalContext from "../../context/GlobalContext";
 
 initTE({ Ripple });
 
@@ -218,10 +219,10 @@ const About = () => {
         </div>,
     ];
 
-    const [isHovered, setIsHovered] = useState(false); // button hover
-    const [open, setOpen] = useState(false); // If expanded is open
-    const [item, setItem] = useState(0); // item chosen in expanded section
-    const [itemHovered, setItemHovered] = useState<number | null>(null); // item hover effect
+    const [isHovered, setIsHovered] = useState(false);
+    const [item, setItem] = useState(0);
+    const [itemHovered, setItemHovered] = useState<number | null>(null);
+    const globalContext = useContext(GlobalContext);
 
     function isMobiletDevice(): boolean {
         const userAgent: string = navigator.userAgent;
@@ -235,8 +236,8 @@ const About = () => {
     var expandRef = useRef<null | HTMLDivElement>(null);
 
     function collapseSection() {
-        setOpen(!open)
-        if (!open) {
+        globalContext.setAboutOpen(!globalContext.aboutOpen);
+        if (!globalContext.aboutOpen) {
             expandRef!.current!.scrollIntoView();
         } else {
             collapseRef!.current!.scrollIntoView();
@@ -438,7 +439,7 @@ const About = () => {
                 <div className="invisible" ref={expandRef}>_</div>
 
                 {/* Expanded Section */}
-                {open && (
+                {globalContext.aboutOpen && (
                     <div className='col-span-11 col-start-2'>
                         <div className='col-start-2 flex justify-center items-center mt-48 md:text-4xl'>
                             <Menu as="div" className="relative  inline-block text-left">
@@ -696,16 +697,16 @@ const About = () => {
 
                 {/* Button */}
                 <div
-                    className={"col-span-2 flex justify-center items-center mt-16 cursor-pointer " + (open ? 'col-start-11' : 'col-start-9')}
+                    className={"col-span-2 flex justify-center items-center mt-16 cursor-pointer " + (globalContext.aboutOpen ? 'col-start-11' : 'col-start-9')}
                     id='expand-about-btn'
                 >
-                    <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (isMobiletDevice() ? '' : (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))
+                    <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (isMobiletDevice() ? '' : (globalContext.aboutOpen ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))
                     }
                         onMouseEnter={() => onMouseHover(true)}
                         onMouseLeave={() => onMouseHover(false)}
                         onClick={() => collapseSection()}
                     >
-                        {open ? (
+                        {globalContext.aboutOpen ? (
                             <div className='text-white font-semibold '>
                                 -
                             </div>

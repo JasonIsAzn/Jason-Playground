@@ -1,15 +1,16 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import GlobalContext from "../../context/GlobalContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
-
 const Contact = () => {
     const [isHovered, setIsHovered] = useState(false);
-    const [open, setOpen] = useState(false);
     const [over, setOver] = useState<number | null>(null);
+    const globalContext = useContext(GlobalContext);
+
 
     function isMobiletDevice(): boolean {
         const userAgent: string = navigator.userAgent;
@@ -33,7 +34,7 @@ const Contact = () => {
                 <p className='col-start-2 col-span-11 text-5xl md:text-6xl lg:text-7xl font-bold m-10'>Contact</p>
 
                 {/* Contact Methods */}
-                {!open && (
+                {!globalContext.contactOpen && (
                     < div className="col-span-12 flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:flex-wrap justify-center items-center sm:space-x-10 my-48 text-3xl font-semibold m-8">
 
                         <button
@@ -100,7 +101,7 @@ const Contact = () => {
                 )}
 
                 {/* Expanded Section */}
-                {open && (
+                {globalContext.contactOpen && (
                     <div className='col-start-2 sm:col-start-3 sm:col-start-4 col-span-10 sm:col-span-2 mt-8 mx-8 sm:mx-0 sm:mb-8'>
                         <div className='my-12 text-2xl sm:text-xl md:text-2xl lg:text-3xl'>
                             <div className='flex flex-row flex-wrap sm:flex-col justify-between sm:justify-start   sm:space-x-0 sm:space-y-4'>
@@ -171,7 +172,7 @@ const Contact = () => {
                         </div>
                     </div>
                 )}
-                {open && (
+                {globalContext.contactOpen && (
                     <div className='col-span-12 sm:col-span-6 sm:border-l border-black flex items-center justify-center sm:pl-12 md:justify-start md:pl-24 lg:pl-48 ml-6 md:ml-0'>
                         <div className="flex items-center justify-start border-t sm:border-t-0 border-black pt-14">
                             <div className="mx-6 sm:mx-0 w-full max-w-lg">
@@ -208,12 +209,12 @@ const Contact = () => {
 
                 {/* Button */}
                 <div className="col-span-12 sm:col-start-11 sm:col-span-2 flex justify-center items-center mt-16 sm:mr-16 cursor-pointer">
-                    <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (isMobiletDevice() ? '' : (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))}
+                    <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (isMobiletDevice() ? '' : (globalContext.contactOpen ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))}
                         onMouseEnter={() => onMouseHover(true)}
                         onMouseLeave={() => onMouseHover(false)}
-                        onClick={() => setOpen(!open)}
+                        onClick={() => globalContext.setContactOpen(!globalContext.contactOpen)}
                     >
-                        {open ? (
+                        {globalContext.contactOpen ? (
                             <div className='text-white font-semibold '>
                                 -
                             </div>

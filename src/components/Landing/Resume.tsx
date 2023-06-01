@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useContext } from 'react'
 import Accordion from '../Accordion';
+import GlobalContext from "../../context/GlobalContext";
 
 const resume_content = [
     {
@@ -36,7 +37,7 @@ const resume_content = [
 
 const Resume = () => {
     const [isHovered, setIsHovered] = useState(false);
-    const [open, setOpen] = useState(false);
+    const globalContext = useContext(GlobalContext);
 
     var expandRef = useRef<null | HTMLDivElement>(null);
 
@@ -56,18 +57,17 @@ const Resume = () => {
     }
 
     function collapseSection() {
-        setOpen(!open)
-        if (open) {
+        globalContext.setResumeOpen(!globalContext.resumeOpen);
+        if (globalContext.resumeOpen) {
             expandRef!.current!.scrollIntoView();
         }
     }
-
     return (
         <div id="section-resume" className='p-4 pt-24 pr-16 h-full pb-24 bg-[#F5F5F5]'
             ref={expandRef}
         >
             <div className="grid grid-cols-12">
-                <div className={"col-start-2 lg:my-12 lg:mb-24 " + (open ? 'col-span-12' : 'col-span-5')}
+                <div className={"col-start-2 lg:my-12 lg:mb-24 " + (globalContext.resumeOpen ? 'col-span-12' : 'col-span-5')}
                 >
                     {/* Title */}
                     <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold pb-8'
@@ -76,7 +76,7 @@ const Resume = () => {
                     </h1>
 
                     {/* Expanded */}
-                    {open && (
+                    {globalContext.resumeOpen && (
 
                         <div className='col-span-12 col-start-2 space-y-10'>
                             {/* Education */}
@@ -232,13 +232,13 @@ const Resume = () => {
                         PDF of current resume
                     </a>
                     {/* Button */}
-                    <div className={"flex items-center cursor-pointer " + (open ? 'justify-end mr-8' : 'justify-center my-32 mb-12 lg:mb-32 sm:mr-[100px] lg:mr-[300px]')}>
-                        <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (isMobiletDevice() ? '' : (open ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))}
+                    <div className={"flex items-center cursor-pointer " + (globalContext.resumeOpen ? 'justify-end mr-8' : 'justify-center my-32 mb-12 lg:mb-32 sm:mr-[100px] lg:mr-[300px]')}>
+                        <div className={"flex justify-center items-center w-12 h-12 rounded-full bg-grey-yellow-5 transition-width duration-200 " + (isMobiletDevice() ? '' : (globalContext.resumeOpen ? '' : 'hover:w-52 hover:x-2 hover:sm:w-64'))}
                             onMouseEnter={() => onMouseHover(true)}
                             onMouseLeave={() => onMouseHover(false)}
                             onClick={() => collapseSection()}
                         >
-                            {open ? (
+                            {globalContext.resumeOpen ? (
                                 <div className='text-white font-semibold '>
                                     -
                                 </div>
@@ -255,18 +255,15 @@ const Resume = () => {
 
                 {/* Accordian */}
                 {
-                    !open && (
+                    !globalContext.resumeOpen && (
                         <div className="col-span-12 col-start-2 lg:col-start-0 lg:col-span-6 mt-12 w-full">
                             <div className="flex-col">
                                 <div className='divide-y divide-black'>
                                     <div></div>
                                     {
-                                        resume_content.map((item, index) => (
-                                            <Accordion index={index} datas={item} />
-                                        ))
+                                        resume_content.map((item, index) => (<Accordion index={index} datas={item} />))
                                     }
                                     <div></div>
-
                                 </div>
                                 <div></div>
                             </div>
