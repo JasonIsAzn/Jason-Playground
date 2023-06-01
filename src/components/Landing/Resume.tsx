@@ -1,5 +1,4 @@
 import { useState, useRef, useContext } from 'react'
-import Accordion from '../Accordion';
 import GlobalContext from "../../context/GlobalContext";
 
 const resume_content = [
@@ -43,9 +42,7 @@ const Resume = () => {
 
     function isMobiletDevice(): boolean {
         const userAgent: string = navigator.userAgent;
-
         const isMobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-
         return isMobile ? true : false;
     }
 
@@ -62,6 +59,17 @@ const Resume = () => {
             expandRef!.current!.scrollIntoView();
         }
     }
+
+    const [contentSelected, setContentSelected] = useState<number | null>(null);
+
+    const handleToggleActive = (index: number) => {
+        if (contentSelected === index) {
+            return setContentSelected(null);
+        }
+        setContentSelected(index);
+    }
+
+
     return (
         <div id="section-resume" className='p-4 pt-24 pr-16 h-full pb-24 bg-[#F5F5F5]'
             ref={expandRef}
@@ -260,9 +268,56 @@ const Resume = () => {
                             <div className="flex-col">
                                 <div className='divide-y divide-black'>
                                     <div></div>
-                                    {
-                                        resume_content.map((item, index) => (<Accordion index={index} datas={item} />))
-                                    }
+                                    {/* Education */}
+                                    <div className={`p-5 mb-5 duration-200  group ${contentSelected === 0 ? 'is-active' : ''}`}
+                                        onClick={() => handleToggleActive(0)}
+                                    >
+                                        <div className="flex flex-row justify-between items-center cursor-pointer">
+                                            <div className="font-bold text-4xl sm:text-7xl group-[.is-active]:font-bold">
+                                                {resume_content[0].title}
+                                            </div>
+                                            <div className="text-xl rotate-90  duration-200 group-[.is-active]:rotate-[270deg]" >
+                                                {">"}
+                                            </div>
+                                        </div>
+                                        <div className="mt-6 overflow-hidden duration-200 max-h-0 group-[.is-active]:max-h-screen">
+                                            {resume_content[0].content}
+                                        </div>
+                                    </div>
+
+                                    {/* Skills */}
+                                    <div className={`p-5 mb-5 duration-200  group ${contentSelected === 1 ? 'is-active' : ''}`}
+                                        onClick={() => handleToggleActive(1)}
+                                    >
+                                        <div className="flex flex-row justify-between items-center cursor-pointer">
+                                            <div className="font-bold text-4xl sm:text-7xl group-[.is-active]:font-bold">
+                                                {resume_content[1].title}
+                                            </div>
+                                            <div className="text-xl rotate-90  duration-200 group-[.is-active]:rotate-[270deg]" >
+                                                {">"}
+                                            </div>
+                                        </div>
+                                        <div className="mt-6 overflow-hidden duration-200 max-h-0 group-[.is-active]:max-h-screen">
+                                            {resume_content[1].content}
+                                        </div>
+                                    </div>
+
+                                    {/* Experience */}
+                                    <div className={`p-5 mb-5 duration-200  group ${contentSelected === 2 ? 'is-active' : ''}`}
+                                        onClick={() => handleToggleActive(2)}
+                                    >
+                                        <div className="flex flex-row justify-between items-center cursor-pointer">
+                                            <div className="font-bold text-4xl sm:text-7xl group-[.is-active]:font-bold">
+                                                {resume_content[2].title}
+                                            </div>
+                                            <div className="text-xl rotate-90 duration-200 group-[.is-active]:rotate-[270deg]" >
+                                                {">"}
+                                            </div>
+                                        </div>
+                                        <div className="mt-6 overflow-hidden duration-200 max-h-0 group-[.is-active]:max-h-screen">
+                                            {resume_content[2].content}
+                                        </div>
+                                    </div>
                                     <div></div>
                                 </div>
                                 <div></div>

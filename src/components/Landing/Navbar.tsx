@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { HashLink } from 'react-router-hash-link';
-import '../underline.css'
+import './underline.css'
 
 const Navbar = () => {
     const navlinks = [

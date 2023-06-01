@@ -20,22 +20,21 @@ const LandingPage = () => {
             setResumeOpen(false);
             setContactOpen(false);
         }
-    }, [aboutOpen]);
+    }, [aboutOpen, setResumeOpen, setContactOpen]);
 
     useEffect(() => {
         if (resumeOpen) {
             setAboutOpen(false);
             setContactOpen(false);
         }
-    }, [resumeOpen]);
+    }, [resumeOpen, setAboutOpen, setContactOpen]);
 
     useEffect(() => {
         if (contactOpen) {
             setAboutOpen(false);
             setResumeOpen(false);
         }
-    }, [contactOpen]);
-
+    }, [contactOpen, setAboutOpen, setResumeOpen]);
 
 
     return (
