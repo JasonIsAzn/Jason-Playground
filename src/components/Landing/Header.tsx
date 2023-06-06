@@ -605,13 +605,13 @@ const Header = () => {
             <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
 
                 <h1 className='flex flex-row md:flex-row space-x-2 md:space-x-5 justify-center items-center text-white text-2xl md:text-5xl xl:text-6xl'>
-                    <span>Hello, I'm</span>
-                    <span className='text-primary_yellow inline-block'> Jason Le</span>
+                    <span className='flex flex-col justify-center items-center sm:flex-row'>Hello, I'm <span className='ml-0 sm:ml-4 text-primary_yellow inline-block'> Jason Le</span></span>
                 </h1>
 
+                <span className='flex flex-row justify-center items-center inline sm:hidden mt-8 text-white text-2xl md:text-3xl xl:text-4xl'> {'I\'m a'}</span>
                 <h1 className='flex flex-row md:flex-row space-x-3 md:space-x-4 justify-center items-center text-white text-2xl md:text-3xl xl:text-4xl'>
-                    <span>{'I\'m a'}</span>
-                    <span className="flex flex-row  justify-center items-center underline decoration-primary_yellow">
+                    <span className='hidden sm:inline'> {'I\'m a'}</span>
+                    <span className="flex flex-row justify-center items-center underline decoration-primary_yellow  break-keep ">
                         <Typewriter
                             words={['web developer', 'student', 'teacher']}
                             loop={0}
@@ -620,6 +620,7 @@ const Header = () => {
                             delaySpeed={1000}
                         />
                     </span>
+
                 </h1>
             </div>
 
